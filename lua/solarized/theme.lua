@@ -221,7 +221,7 @@ theme.loadTreeSitter = function ()
         ['@module.builtin'] =        { fg = solarized.red },    -- For identifiers referring to modules and namespaces.
         ['@number'] =                { fg = solarized.red },    -- For all numbers
         ['@number.float'] =          { fg = solarized.red },    -- For floats.
-        ['@operator'] =              { fg = solarized.black }, -- For any operator: `+`, but also `->` and `*` in C.
+        ['@operator'] =              { fg = solarized.text_hl }, -- For any operator: `+`, but also `->` and `*` in C.
         ['@property'] =              { fg = solarized.text_hl, style = 'italic' },
         ['@punctuation.delimiter'] = { fg = solarized.red }, -- For delimiters ie: `.`
         ['@punctuation.bracket'] =   { fg = solarized.red }, -- For brackets and parens.
