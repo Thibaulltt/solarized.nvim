@@ -25,14 +25,21 @@ local solarized = {
 	magenta =       '#d33682',
 	violet =        '#6c71c4',
 
+	-- Defaults for the light variant:
 	bg_light =       bases['base3'],
 	bg_light_alt =   bases['base2'],
+	text_light_alt = bases['base1'],
+	text_light_hl =  bases['base02'],
+	text_light =     bases['base00'],
+	fg_light =       bases['base01'],
+	-- Defaults for the dark variant:
 	bg_dark =        bases['base03'],
 	bg_dark_alt =    bases['base02'],
-	fg_light =       bases['base0'],
-	text_light =     bases['base1'],
-	fg_dark =        bases['base00'],
-	text_dark =      bases['base01'],
+	text_dark_alt =  bases['base01'],
+	text_dark_hl =   bases['base2'],
+	text_dark =      bases['base0'],
+	fg_dark =        bases['base1'],
+
 	comments =      '#657b83',
 	selection =     '#d3cfc1',
 	contrast =      '#002b36',
@@ -56,12 +63,18 @@ if vim.o.background == 'dark' then
 	solarized.bg_alt = solarized.bg_dark_alt
 	solarized.fg = solarized.fg_dark
 	solarized.text = solarized.text_dark
+	solarized.text_hl = solarized.text_dark_hl
+	solarized.text_alt = solarized.text_dark_alt
 else
 	solarized.bg = solarized.bg_light
 	solarized.bg_alt = solarized.bg_light_alt
 	solarized.fg = solarized.fg_light
 	solarized.text = solarized.text_light
+	solarized.text_hl = solarized.text_light_hl
+	solarized.text_alt = solarized.text_light_alt
 end
+
+-- ---------------
 -- Optional colors
 
 -- Enable contrast sidebars, floating windows and popup menus

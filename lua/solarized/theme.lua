@@ -54,33 +54,33 @@ theme.loadSyntax = function ()
 
 	-- Italic comments
 	if vim.g.solarized_italic_comments == true then
-		syntax.Comment =		{fg = solarized.comments, bg = solarized.none, style = 'italic'} -- italic comments
+		syntax.Comment =		{ fg = solarized.comments, bg = solarized.none, style = 'italic' } -- italic comments
 	else
-		syntax.Comment =		{fg = solarized.comments} -- normal comments
+		syntax.Comment =		{ fg = solarized.comments } -- normal comments
 	end
 
 	-- Italic Keywords
 	if vim.g.solarized_italic_keywords == true then
-		syntax.Conditional =		{fg = solarized.yellow, bg = solarized.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
-		syntax.Keyword =			{fg = solarized.yellow, bg = solarized.none, style = 'italic'} -- italic for, do, while, etc.
-		syntax.Repeat =				{fg = solarized.yellow, bg = solarized.none, style = 'italic'} -- italic any other keyword
+		syntax.Conditional =		{ fg = solarized.yellow, bg = solarized.none, style = 'italic' } -- italic if, then, else, endif, switch, etc.
+		syntax.Keyword =			{ fg = solarized.yellow, bg = solarized.none, style = 'italic' } -- italic for, do, while, etc.
+		syntax.Repeat =				{ fg = solarized.yellow, bg = solarized.none, style = 'italic' } -- italic any other keyword
 	else
-		syntax.Conditional =		{fg = solarized.yellow} -- normal if, then, else, endif, switch, etc.
-		syntax.Keyword =			{fg = solarized.yellow} -- normal for, do, while, etc.
-		syntax.Repeat =				{fg = solarized.yellow} -- normal any other keyword
+		syntax.Conditional =		{ fg = solarized.yellow } -- normal if, then, else, endif, switch, etc.
+		syntax.Keyword =			{ fg = solarized.yellow } -- normal for, do, while, etc.
+		syntax.Repeat =				{ fg = solarized.yellow } -- normal any other keyword
 	end
 
 	-- Italic Function names
 	if vim.g.solarized_italic_functions == true then
-		syntax.Function =		{fg = solarized.blue, bg = solarized.none, style = 'italic'} -- italic funtion names
+		syntax.Function =		{ fg = solarized.blue, bg = solarized.none, style = 'italic' } -- italic funtion names
 	else
-		syntax.Function =		{fg = solarized.blue} -- normal function names
+		syntax.Function =		{ fg = solarized.blue } -- normal function names
 	end
 
 	if vim.g.solarized_italic_variables == true then
-		syntax.Identifier =				{fg = solarized.gray, bg = solarized.none, style = 'italic'}; -- any variable name
+		syntax.Identifier =				{ fg = solarized.gray, bg = solarized.none, style = 'italic' }; -- any variable name
     else
-		syntax.Identifier =				{fg = solarized.gray}; -- any variable name
+		syntax.Identifier =				{ fg = solarized.gray }; -- any variable name
     end
 
     return syntax
@@ -207,86 +207,149 @@ theme.loadTreeSitter = function ()
     -- TreeSitter highlight groups
 
     local treesitter = {
-        TSAnnotation =              { fg = solarized.red, style = 'bold' },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-        TSAttribute =               { fg = solarized.purple},    -- (unstable) TODO: docs
-        TSBoolean=                  { fg = solarized.orange},    -- For booleans.
-        TSCharacter=                { fg = solarized.orange},    -- For characters.
-        TSConstructor =             { fg = solarized.yellow}, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        TSConstant =                { fg = solarized.purple },    -- For constants
-        TSConstBuiltin =            { fg = solarized.blue },    -- For constant that are built in the language: `nil` in Lua.
-        TSConstMacro =              { fg = solarized.blue },    -- For constants that are defined by macros: `NULL` in C.
-        TSError =                   { fg = solarized.error, style = 'bold' },    -- For syntax/parser errors.
-        TSException =               { fg = solarized.purple, style = 'bold' },    -- For exception related keywords.
-        TSField =                   { fg = solarized.gray}, -- For fields.
-        TSFloat =                   { fg = solarized.red},    -- For floats.
-        TSFuncMacro =               { fg = solarized.blue },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-        TSInclude =                 { fg = solarized.cyan, style = 'bold' },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        TSLabel =                   { fg = solarized.red }, -- For labels: `label:` in C and `:label:` in Lua.
-        TSNamespace =               { fg = solarized.purple },    -- For identifiers referring to modules and namespaces.
-        --TSNone =                    { },    -- TODO: docs
-        TSNumber =                  { fg = solarized.orange},    -- For all numbers
-        TSOperator =                { fg = solarized.black}, -- For any operator: `+`, but also `->` and `*` in C.
-        TSParameter =               { fg = solarized.green }, -- For parameters of a function.
-        TSParameterReference=       { fg = solarized.green },    -- For references to parameters of a function.
-        TSProperty =                { fg = solarized.green }, -- Same as `TSField`.
-        TSPunctDelimiter =          { fg = solarized.black }, -- For delimiters ie: `.`
-        TSPunctBracket =            { fg = solarized.black }, -- For brackets and parens.
-        TSPunctSpecial =            { fg = solarized.black }, -- For special punctutation that does not fall in the catagories before.
-        TSString =                  { fg = solarized.link },    -- For strings.
-        TSStringRegex =             { fg = solarized.blue }, -- For regexes.
-        TSStringEscape =            { fg = solarized.disabled }, -- For escape characters within a string.
-        TSSymbol =                  { fg = solarized.purple},    -- For identifiers referring to symbols or atoms.
-        TSType =                    { fg = solarized.yellow, style = 'bold' },    -- For types.
-        TSTypeBuiltin =             { fg = solarized.yellow },    -- For builtin types.
-        TSTag =                     { fg = solarized.red, style = 'bold' },    -- Tags like html tag names.
-        TSTagDelimiter =            { fg = solarized.purple },    -- Tag delimiter like `<` `>` `/`
-        TSText =                    { fg = solarized.text },    -- For strings considered text in a markup language.
-        TSTextReference =           { fg = solarized.purple }, -- FIXME
-        TSEmphasis =                { fg = solarized.paleblue, style = 'bold' },    -- For text to be represented with emphasis.
-        TSUnderline =               { fg = solarized.fg, bg = solarized.none, style = 'underline' },    -- For text to be represented with an underline.
-        TSStrike =                  { },    -- For strikethrough text.
-        TSTitle =                   { fg = solarized.paleblue, bg = solarized.none, style = 'bold' },    -- Text that is part of a title.
-        TSLiteral =                 { fg = solarized.fg},    -- Literal text.
-        TSURI =                     { fg = solarized.link },    -- Any URI like a link or email.
+        ['@attribute'] =             { fg = solarized.purple },    -- Attribute annotations (e.g. Rust lifetimes).
+        ['@attribute.builtin'] =     { fg = solarized.purple, style = 'italic' },    -- Builtin annotations (e.g. @property in Python).
+        ['@boolean']=                { fg = solarized.orange },    -- For booleans.
+        ['@character']=              { fg = solarized.orange },    -- For characters.
+        ['@character.special']=      { fg = solarized.orange },    -- For characters.
+        ['@constructor'] =           { fg = solarized.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        ['@constant'] =              { fg = solarized.purple },    -- For constants
+        ['@constant.builtin'] =      { fg = solarized.red },    -- For constant that are built in the language: `nil` in Lua.
+        ['@constant.macro'] =        { fg = solarized.blue },    -- For constants that are defined by macros: `NULL` in C.
+        ['@label'] =                 { fg = solarized.red }, -- For labels: `label:` in C and `:label:` in Lua.
+        ['@module'] =                { fg = solarized.purple },    -- For identifiers referring to modules and namespaces.
+        ['@module.builtin'] =        { fg = solarized.red },    -- For identifiers referring to modules and namespaces.
+        ['@number'] =                { fg = solarized.red },    -- For all numbers
+        ['@number.float'] =          { fg = solarized.red },    -- For floats.
+        ['@operator'] =              { fg = solarized.black }, -- For any operator: `+`, but also `->` and `*` in C.
+        ['@property'] =              { fg = solarized.text_hl, style = 'italic' },
+        ['@punctuation.delimiter'] = { fg = solarized.red }, -- For delimiters ie: `.`
+        ['@punctuation.bracket'] =   { fg = solarized.red }, -- For brackets and parens.
+        ['@punctuation.special'] =   { fg = solarized.red, style = 'bold' }, -- For special punctutation that does not fall in the catagories before.
+        ['@type'] =                  { fg = solarized.yellow }, -- For types and type annotations.
+        ['@type.builtin'] =          { fg = solarized.red, style = 'italic' }, -- For builtin types.
+        ['@type.definition'] =       { fg = solarized.yellow, style = 'italic' }, -- For identifiers in type definitions (e.g. typedef in C).
+        ['@tag'] =                   { fg = solarized.red, style = 'bold' },    -- Tags like html tag names.
+        ['@tag.builtin'] =           { fg = solarized.red, style = 'bold' },    -- Tags like html tag names.
+        ['@tag.attribute'] =         { fg = solarized.red, style = 'bold' },    -- Tags like html tag names.
+        ['@tag.delimiter'] =         { fg = solarized.purple },    -- Tag delimiter like `<` `>` `/`
+
+		-- Those comment types are not affected by the solarized_italic_comments variable:
+		['@comment.error'] =         { fg = solarized.red, style = 'bold' },
+		['@comment.warning'] =       { fg = solarized.orange, style = 'bold' },
+		['@comment.todo'] =          { fg = solarized.purple, style = 'bold,italic' },
+		['@comment.note'] =          { fg = solarized.green, style = 'bold' },
+
+		-- Markup styles:
+        ['@markup.strong'] =         { fg = solarized.text, bg = solarized.none, style = 'bold' },
+        ['@markup.italic'] =         { fg = solarized.text, bg = solarized.none, style = 'italic' },
+        ['@markup.strikethrough'] =  { fg = solarized.text, bg = solarized.none, style = 'strikethrough' },
+        ['@markup.underline'] =      { fg = solarized.text, bg = solarized.none, style = 'underline' },
+		-- Text structure:
+        ['@markup.heading'] =        { fg = solarized.red, bg = solarized.none, style = 'bold' },
+        ['@markup.heading.1'] =      { fg = solarized.orange, bg = solarized.none, style = 'bold' },
+        ['@markup.heading.2'] =      { fg = solarized.yellow, bg = solarized.none, style = 'bold' },
+        ['@markup.heading.3'] =      { fg = solarized.green, bg = solarized.none, style = 'italic' },
+        ['@markup.heading.4'] =      { fg = solarized.cyan, bg = solarized.none, style = 'italic' },
+        ['@markup.heading.5'] =      { fg = solarized.blue, bg = solarized.none, style = 'italic' },
+        ['@markup.heading.6'] =      { fg = solarized.violet, bg = solarized.none, style = 'italic' },
+		-- Special blocks/lines:
+        ['@markup.quote'] =          { fg = solarized.cyan, bg = solarized.none, style = 'italic' },
+        ['@markup.math'] =           { fg = solarized.yellow, bg = solarized.none },
+		-- Links:
+        ['@markup.link'] =           { fg = solarized.link, bg = solarized.none },
+        ['@markup.link.label'] =     { fg = solarized.link, bg = solarized.none, style = 'italic' },
+        ['@markup.link.url'] =       { fg = solarized.link, bg = solarized.none, style = 'underline' },
+        ['@markup.raw'] =            { fg = solarized.orange, bg = solarized.none }, -- Raw text in a markup language.
+        ['@markup.raw.block'] =      { fg = solarized.orange, bg = solarized.none }, -- Same as above, in a block.
+		-- List items:
+        ['@markup.list'] =           { fg = solarized.magenta, bg = solarized.none },
+        ['@markup.list.checked'] =   { fg = solarized.magenta, bg = solarized.none, style = 'strikethrough' },
+        ['@markup.list.unchecked'] = { fg = solarized.magenta, bg = solarized.none },
+
+		-- All string types:
+        ['@string'] =                { fg = solarized.green },
+        ['@string.documentation'] =  { fg = solarized.text_alt, style = 'bold,italic' },
+        ['@string.regexp'] =         { fg = solarized.green, style = 'italic' }, -- For regexes.
+        ['@string.escape'] =         { fg = solarized.disabled }, -- For escape characters within a string.
+        ['@string.special'] =        { fg = solarized.disabled },
+        ['@string.special.symbol'] = { fg = solarized.green, style = 'bold' },
+        ['@string.special.path'] =   { fg = solarized.text },
+        ['@string.special.url'] =    { fg = solarized.link }, -- Any URI like a link or email in a markup language.
     }
 
     -- Options:
 
-    -- Italic comments
+    -- Italic comments:
     if vim.g.solarized_italic_comments == true then
-        treesitter.TSComment=                  { fg = solarized.comments , bg = solarized.none, style = 'bold,italic' }    -- For comment blocks.
+        treesitter['@comment'] =                    { fg = solarized.comments , bg = solarized.none, style = 'italic' }    -- For comment blocks.
+        treesitter['@comment.documentation'] =      { fg = solarized.comments , bg = solarized.none, style = 'bold,italic' }    -- For comment blocks.
     else
-        treesitter.TSComment=                  { fg = solarized.comments }    -- For comment blocks.
+        treesitter['@comment'] =                    { fg = solarized.comments }    -- For comment blocks.
+        treesitter['@comment.documentation'] =      { fg = solarized.comments }    -- For comment blocks.
     end
 
+	-- Italic keywords:
     if vim.g.solarized_italic_keywords == true then
-        treesitter.TSConditional =             { fg = solarized.greeen, style = 'italic' }    -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = solarized.green, style = 'italic' } -- For keywords that don't fall in previous categories.
-        treesitter.TSRepeat =                  { fg = solarized.green, style = 'bold,italic' }    -- For keywords related to loops.
-        treesitter.TSKeywordFunction =         { fg = solarized.green, style = 'bold,italic' } -- For keywords used to define a fuction.
+		treesitter['@keyword'] =                  { fg = solarized.green, style = 'italic' }      -- General keywords not in the categories below.
+		treesitter['@keyword.coroutine'] =        { fg = solarized.green, style = 'italic' }      -- Async/await and related keywords
+		treesitter['@keyword.function'] =         { fg = solarized.blue, style = 'bold,italic' } -- Keyword to define a function (e.g. def in lua).
+		treesitter['@keyword.operator'] =         { fg = solarized.green, style = 'italic' }      -- Natural-text operators: 'and', 'or', 'is' ...
+		treesitter['@keyword.import'] =           { fg = solarized.green, style = 'bold,italic' } -- Inclusion/export of modules/names.
+		treesitter['@keyword.type'] =             { fg = solarized.green, style = 'italic' }      -- Keywords for forming types (struct, enum)
+		treesitter['@keyword.modifier'] =         { fg = solarized.green, style = 'italic' }      -- Modifiers for another keyword: const, public...
+		treesitter['@keyword.repeat'] =           { fg = solarized.green, style = 'bold,italic' } -- Loop-related keywords.
+		treesitter['@keyword.return'] =           { fg = solarized.blue, style = 'bold,italic' } -- Return, yield and similar.
+		treesitter['@keyword.debug'] =            { fg = solarized.green, style = 'italic' }      -- Debugging related (???) See :h treesitter.
+		treesitter['@keyword.exception'] =        { fg = solarized.green, style = 'bold,italic' } -- Throw/catch keywords, and related.
+		treesitter['@keyword.directive'] =        { fg = solarized.purple, style = 'bold,italic' } -- Throw/catch keywords, and related.
+		treesitter['@keyword.directive.define'] = { fg = solarized.purple, style = 'bold,italic' } -- Throw/catch keywords, and related.
     else
-        treesitter.TSConditional =             { fg = solarized.green}    -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = solarized.green} -- For keywords that don't fall in previous categories.
-        treesitter.TSRepeat =                  { fg = solarized.green, style = 'bold' }    -- For keywords related to loops.
-        treesitter.TSKeywordFunction =         { fg = solarized.green, style = 'bold' } -- For keywords used to define a fuction.
+		treesitter['@keyword'] =                  { fg = solarized.green }
+		treesitter['@keyword.coroutine'] =        { fg = solarized.green }
+		treesitter['@keyword.function'] =         { fg = solarized.blue, style = 'bold' }
+		treesitter['@keyword.operator'] =         { fg = solarized.green }
+		treesitter['@keyword.import'] =           { fg = solarized.green, style = 'bold' }
+		treesitter['@keyword.type'] =             { fg = solarized.green }
+		treesitter['@keyword.modifier'] =         { fg = solarized.green }
+		treesitter['@keyword.repeat'] =           { fg = solarized.green, style = 'bold' }
+		treesitter['@keyword.return'] =           { fg = solarized.blue, style = 'bold' }
+		treesitter['@keyword.debug'] =            { fg = solarized.green }
+		treesitter['@keyword.exception'] =        { fg = solarized.green, style = 'bold' }
+		treesitter['@keyword.directive'] =        { fg = solarized.purple, style = 'bold' } -- Throw/catch keywords, and related.
+		treesitter['@keyword.directive.define'] = { fg = solarized.purple, style = 'bold' } -- Throw/catch keywords, and related.
     end
 
+	-- Functions: function[.builtin], function.call, function.macro
     if vim.g.solarized_italic_functions == true then
-        treesitter.TSFunction =                { fg = solarized.yellow, style = 'bold,italic' }    -- For fuction (calls and definitions).
-        treesitter.TSMethod =                  { fg = solarized.yellow, style = 'bold,italic' }    -- For method calls and definitions.
-        treesitter.TSFuncBuiltin =             { fg = solarized.purple, style = 'bold,italic' }    -- For builtin functions: `table.insert` in Lua.
+        treesitter['@function'] =                   { fg = solarized.blue, style = 'bold,italic' }    -- For fuction (calls and definitions).
+        treesitter['@function.call'] =              { fg = solarized.blue, style = 'italic' }    -- For fuction (calls and definitions).
+        treesitter['@function.method'] =            { fg = solarized.blue, style = 'bold,italic' }    -- For method calls and definitions.
+        treesitter['@function.method.call'] =       { fg = solarized.blue, style = 'italic' }    -- For method calls and definitions.
+        treesitter['@function.macro'] =             { fg = solarized.purple, style = 'bold,italic' }    -- For method calls and definitions.
+        treesitter['@function.builtin'] =           { fg = solarized.red, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
     else
-        treesitter.TSFunction =                { fg = solarized.yellow, style = 'bold' }    -- For fuction (calls and definitions).
-        treesitter.TSMethod =                  { fg = solarized.yellow, style = 'bold' }    -- For method calls and definitions.
-        treesitter.TSFuncBuiltin =             { fg = solarized.purple, style = 'bold' }    -- For builtin functions: `table.insert` in Lua.
+        treesitter['@function'] =                   { fg = solarized.blue, style = 'bold' }    -- For fuction (calls and definitions).
+        treesitter['@function.call'] =              { fg = solarized.blue }    -- For fuction (calls and definitions).
+        treesitter['@function.method'] =            { fg = solarized.blue, style = 'bold' }    -- For method calls and definitions.
+        treesitter['@function.method.call'] =       { fg = solarized.blue }    -- For method calls and definitions.
+        treesitter['@function.macro'] =             { fg = solarized.purple, style = 'italic' }    -- For method calls and definitions.
+        treesitter['@function.builtin'] =           { fg = solarized.red }    -- For builtin functions: `table.insert` in Lua.
     end
 
+	-- Variables: variable[.builtin], variable.parameter[.builtin], variable.member
     if vim.g.solarized_italic_variables == true then
-        treesitter.TSVariable =                { fg = solarized.gray, style = 'italic' } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = solarized.gray, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter['@variable'] =                   { fg = solarized.text, style = 'italic' } -- Any variable name that does not have another highlight.
+        treesitter['@variable.builtin'] =           { fg = solarized.red, style = 'bold,italic' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter['@variable.parameter'] =         { fg = solarized.text, style = 'italic' }
+        treesitter['@variable.parameter.builtin'] = { fg = solarized.red, style = 'bold,italic' }
+        treesitter['@variable.member'] =            { fg = solarized.text_hl, style = 'italic' }
     else
-        treesitter.TSVariable =                { fg = solarized.cursor} -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = solarized.cursor} -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter['@variable'] =                   { fg = solarized.text } -- Any variable name that does not have another highlight.
+        treesitter['@variable.builtin'] =           { fg = solarized.red, style = 'bold' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter['@variable.parameter'] =         { fg = solarized.text }
+        treesitter['@variable.parameter.builtin'] = { fg = solarized.red, style = 'bold' }
+        treesitter['@variable.member'] =            { fg = solarized.text_hl }
     end
 
     return treesitter
@@ -302,20 +365,20 @@ theme.loadLSP = function ()
         LspDiagnosticsFloatingError =           { fg = solarized.error }, -- used for "Error" diagnostic messages in the diagnostics float
         LspDiagnosticsVirtualTextError =        { fg = solarized.error }, -- Virtual text "Error"
         LspDiagnosticsUnderlineError =          { style = 'undercurl', sp = solarized.error }, -- used to underline "Error" diagnostics.
-        LspDiagnosticsDefaultWarning =          { fg = solarized.purple}, -- used for "Warning" diagnostic signs in sign column
-        LspDiagnosticsSignWarning =             { fg = solarized.purple}, -- used for "Warning" diagnostic signs in sign column
-        LspDiagnosticsFloatingWarning =         { fg = solarized.purple}, -- used for "Warning" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextWarning =      { fg = solarized.purple}, -- Virtual text "Warning"
+        LspDiagnosticsDefaultWarning =          { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
+        LspDiagnosticsSignWarning =             { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
+        LspDiagnosticsFloatingWarning =         { fg = solarized.purple }, -- used for "Warning" diagnostic messages in the diagnostics float
+        LspDiagnosticsVirtualTextWarning =      { fg = solarized.purple }, -- Virtual text "Warning"
         LspDiagnosticsUnderlineWarning =        { style = 'undercurl', sp = solarized.purple }, -- used to underline "Warning" diagnostics.
         LspDiagnosticsDefaultInformation =      { fg = solarized.paleblue }, -- used for "Information" diagnostic virtual text
         LspDiagnosticsSignInformation =         { fg = solarized.paleblue },  -- used for "Information" diagnostic signs in sign column
         LspDiagnosticsFloatingInformation =     { fg = solarized.paleblue }, -- used for "Information" diagnostic messages in the diagnostics float
         LspDiagnosticsVirtualTextInformation =  { fg = solarized.paleblue }, -- Virtual text "Information"
         LspDiagnosticsUnderlineInformation =    { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Information" diagnostics.
-        LspDiagnosticsDefaultHint =             { fg = solarized.yellow  },  -- used for "Hint" diagnostic virtual text
-        LspDiagnosticsSignHint =                { fg = solarized.yellow  }, -- used for "Hint" diagnostic signs in sign column
-        LspDiagnosticsFloatingHint =            { fg = solarized.yellow  }, -- used for "Hint" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextHint =         { fg = solarized.yellow  }, -- Virtual text "Hint"
+        LspDiagnosticsDefaultHint =             { fg = solarized.yellow },  -- used for "Hint" diagnostic virtual text
+        LspDiagnosticsSignHint =                { fg = solarized.yellow }, -- used for "Hint" diagnostic signs in sign column
+        LspDiagnosticsFloatingHint =            { fg = solarized.yellow }, -- used for "Hint" diagnostic messages in the diagnostics float
+        LspDiagnosticsVirtualTextHint =         { fg = solarized.yellow }, -- Virtual text "Hint"
         LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Hint" diagnostics.
         LspReferenceText =                      { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "text" references
         LspReferenceRead =                      { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "read" references
