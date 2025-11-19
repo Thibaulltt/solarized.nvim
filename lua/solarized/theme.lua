@@ -6,48 +6,48 @@ theme.loadSyntax = function ()
     -- Syntax highlight groups
 
 	local syntax = {
-		Type =						{ fg = solarized.yellow }, -- int, long, char, etc.
-		StorageClass =				{ fg = solarized.cyan }, -- static, register, volatile, etc.
-		Structure =					{ fg = solarized.yellow }, -- struct, union, enum, etc.
+		Type =						{ fg = solarized.bases.yellow }, -- int, long, char, etc.
+		StorageClass =				{ fg = solarized.bases.cyan }, -- static, register, volatile, etc.
+		Structure =					{ fg = solarized.bases.yellow }, -- struct, union, enum, etc.
 		Constant =					{ fg = solarized.purple }, -- any constant
-		String =					{ fg = solarized.green, bg = solarized.none, style= 'italic' }, -- Any string
-		Character =					{ fg = solarized.orange }, -- any character constant: 'c', '\n'
-		Number =					{ fg = solarized.orange }, -- a number constant: 5
-		Boolean =					{ fg = solarized.orange }, -- a boolean constant: TRUE, false
-		Float =						{ fg = solarized.orange }, -- a floating point constant: 2.3e10
-		Statement =					{ fg = solarized.gray }, -- any statement
-		Label =						{ fg = solarized.yellow }, -- case, default, etc.
-		Operator =					{ fg = solarized.cyan }, -- sizeof", "+", "*", etc.
-		Exception =					{ fg = solarized.cyan }, -- try, catch, throw
-		PreProc =					{ fg = solarized.yellow }, -- generic Preprocessor
-		Include =					{ fg = solarized.blue }, -- preprocessor #include
-		Define =					{ fg = solarized.gray }, -- preprocessor #define
-		Macro =						{ fg = solarized.cyan }, -- same as Define
-		Typedef =					{ fg = solarized.red }, -- A typedef
-		PreCondit =					{ fg = solarized.cyan }, -- preprocessor #if, #else, #endif, etc.
-		Special =					{ fg = solarized.red }, -- any special symbol
-		SpecialChar =				{ fg = solarized.gray }, -- special character in a constant
-		Tag =						{ fg = solarized.red }, -- you can use CTRL-] on this
-		Delimiter =					{ fg = solarized.cyan }, -- character that needs attention like , or .
-		SpecialComment =			{ fg = solarized.gray }, -- special things inside a comment
-		Debug =						{ fg = solarized.red }, -- debugging statements
+		String =					{ fg = solarized.bases.green, bg = solarized.none, style= 'italic' }, -- Any string
+		Character =					{ fg = solarized.bases.orange }, -- any character constant: 'c', '\n'
+		Number =					{ fg = solarized.bases.orange }, -- a number constant: 5
+		Boolean =					{ fg = solarized.bases.orange }, -- a boolean constant: TRUE, false
+		Float =						{ fg = solarized.bases.orange }, -- a floating point constant: 2.3e10
+		Statement =					{ fg = solarized.text }, -- any statement
+		Label =						{ fg = solarized.bases.yellow }, -- case, default, etc.
+		Operator =					{ fg = solarized.bases.cyan }, -- sizeof", "+", "*", etc.
+		Exception =					{ fg = solarized.bases.cyan }, -- try, catch, throw
+		PreProc =					{ fg = solarized.bases.yellow }, -- generic Preprocessor
+		Include =					{ fg = solarized.bases.blue }, -- preprocessor #include
+		Define =					{ fg = solarized.fg }, -- preprocessor #define
+		Macro =						{ fg = solarized.bases.cyan }, -- same as Define
+		Typedef =					{ fg = solarized.bases.red }, -- A typedef
+		PreCondit =					{ fg = solarized.bases.cyan }, -- preprocessor #if, #else, #endif, etc.
+		Special =					{ fg = solarized.bases.red }, -- any special symbol
+		SpecialChar =				{ fg = solarized.fg_hl }, -- special character in a constant
+		Tag =						{ fg = solarized.bases.red }, -- you can use CTRL-] on this
+		Delimiter =					{ fg = solarized.bases.cyan }, -- character that needs attention like , or .
+		SpecialComment =			{ fg = solarized.fg_hl }, -- special things inside a comment
+		Debug =						{ fg = solarized.bases.red }, -- debugging statements
 		Underlined =				{ fg = solarized.link, bg = solarized.none, style = 'underline' }, -- text that stands out, HTML links
 		Ignore =					{ fg = solarized.disabled }, -- left blank, hidden
 		Error =						{ fg = solarized.error, bg = solarized.none, style = 'bold,underline' }, -- any erroneous construct
 		Todo =						{ fg = solarized.purple, bg = solarized.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
         htmlLink = { fg = solarized.link, style = "underline" },
-        htmlH1 = { fg = solarized.cyan, style = "bold" },
-        htmlH2 = { fg = solarized.red, style = "bold" },
-        htmlH3 = { fg = solarized.green, style = "bold" },
+        htmlH1 = { fg = solarized.bases.cyan, style = "bold" },
+        htmlH2 = { fg = solarized.bases.red, style = "bold" },
+        htmlH3 = { fg = solarized.bases.green, style = "bold" },
         htmlH4 = { fg = solarized.purple, style = "bold" },
-        htmlH5 = { fg = solarized.yellow, style = "bold" },
-        markdownH1 = { fg = solarized.cyan, style = "bold" },
-        markdownH2 = { fg = solarized.red, style = "bold" },
-        markdownH3 = { fg = solarized.green, style = "bold" },
-        markdownH1Delimiter = { fg = solarized.cyan },
-        markdownH2Delimiter = { fg = solarized.red },
-        markdownH3Delimiter = { fg = solarized.green },
+        htmlH5 = { fg = solarized.bases.yellow, style = "bold" },
+        markdownH1 = { fg = solarized.bases.cyan, style = "bold" },
+        markdownH2 = { fg = solarized.bases.red, style = "bold" },
+        markdownH3 = { fg = solarized.bases.green, style = "bold" },
+        markdownH1Delimiter = { fg = solarized.bases.cyan },
+        markdownH2Delimiter = { fg = solarized.bases.red },
+        markdownH3Delimiter = { fg = solarized.bases.green },
 	}
 
 	-- Options:
@@ -61,26 +61,26 @@ theme.loadSyntax = function ()
 
 	-- Italic Keywords
 	if vim.g.solarized_italic_keywords == true then
-		syntax.Conditional =		{ fg = solarized.yellow, bg = solarized.none, style = 'italic' } -- italic if, then, else, endif, switch, etc.
-		syntax.Keyword =			{ fg = solarized.yellow, bg = solarized.none, style = 'italic' } -- italic for, do, while, etc.
-		syntax.Repeat =				{ fg = solarized.yellow, bg = solarized.none, style = 'italic' } -- italic any other keyword
+		syntax.Conditional =		{ fg = solarized.bases.yellow, bg = solarized.none, style = 'italic' } -- italic if, then, else, endif, switch, etc.
+		syntax.Keyword =			{ fg = solarized.bases.yellow, bg = solarized.none, style = 'italic' } -- italic for, do, while, etc.
+		syntax.Repeat =				{ fg = solarized.bases.yellow, bg = solarized.none, style = 'italic' } -- italic any other keyword
 	else
-		syntax.Conditional =		{ fg = solarized.yellow } -- normal if, then, else, endif, switch, etc.
-		syntax.Keyword =			{ fg = solarized.yellow } -- normal for, do, while, etc.
-		syntax.Repeat =				{ fg = solarized.yellow } -- normal any other keyword
+		syntax.Conditional =		{ fg = solarized.bases.yellow } -- normal if, then, else, endif, switch, etc.
+		syntax.Keyword =			{ fg = solarized.bases.yellow } -- normal for, do, while, etc.
+		syntax.Repeat =				{ fg = solarized.bases.yellow } -- normal any other keyword
 	end
 
 	-- Italic Function names
 	if vim.g.solarized_italic_functions == true then
-		syntax.Function =		{ fg = solarized.blue, bg = solarized.none, style = 'italic' } -- italic funtion names
+		syntax.Function =		{ fg = solarized.bases.blue, bg = solarized.none, style = 'italic' } -- italic funtion names
 	else
-		syntax.Function =		{ fg = solarized.blue } -- normal function names
+		syntax.Function =		{ fg = solarized.bases.blue } -- normal function names
 	end
 
 	if vim.g.solarized_italic_variables == true then
-		syntax.Identifier =				{ fg = solarized.gray, bg = solarized.none, style = 'italic' }; -- any variable name
+		syntax.Identifier =				{ fg = solarized.text, bg = solarized.none, style = 'italic' }; -- any variable name
     else
-		syntax.Identifier =				{ fg = solarized.gray }; -- any variable name
+		syntax.Identifier =				{ fg = solarized.text }; -- any variable name
     end
 
     return syntax
@@ -97,17 +97,17 @@ theme.loadEditor = function ()
 		Conceal =				{ fg = solarized.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor =				{ fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- the character under the cursor
 		CursorIM =				{ fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- like Cursor, but used when in IME mode
-		Directory =				{ fg = solarized.blue, bg = solarized.none }, -- directory names (and other special names in listings)
-		DiffAdd =				{ fg = solarized.green, bg = solarized.none, style = 'reverse' }, -- diff mode: Added line
-		DiffChange =			{ fg = solarized.orange, bg = solarized.none, style = 'reverse' }, --  diff mode: Changed line
-		DiffDelete =			{ fg = solarized.red, bg = solarized.none, style = 'reverse' }, -- diff mode: Deleted line
+		Directory =				{ fg = solarized.bases.blue, bg = solarized.none }, -- directory names (and other special names in listings)
+		DiffAdd =				{ fg = solarized.bases.green, bg = solarized.none, style = 'reverse' }, -- diff mode: Added line
+		DiffChange =			{ fg = solarized.bases.orange, bg = solarized.none, style = 'reverse' }, --  diff mode: Changed line
+		DiffDelete =			{ fg = solarized.bases.red, bg = solarized.none, style = 'reverse' }, -- diff mode: Deleted line
 		DiffText =				{ fg = solarized.purple, bg = solarized.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
 		EndOfBuffer =			{ fg = solarized.disabled },
 		ErrorMsg =				{ fg = solarized.none },
 		Folded =				{ fg = solarized.disabled, bg = solarized.none, style = 'italic' },
-		FoldColumn =			{ fg = solarized.blue },
+		FoldColumn =			{ fg = solarized.bases.blue },
 		IncSearch =				{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
-		LineNr =				{ fg = solarized.line_numbers, bg = solarized.bg_alt },
+		LineNr =				{ fg = solarized.line_numbers, bg = solarized.bg_hl },
 		CursorLineNr =			{ fg = solarized.accent },
 		MatchParen =			{ fg = solarized.purple, bg = solarized.none, style = 'bold' },
 		ModeMsg =				{ fg = solarized.accent },
@@ -117,15 +117,15 @@ theme.loadEditor = function ()
 		PmenuSel =				{ fg = solarized.accent, bg = solarized.active },
 		PmenuSbar =				{ fg = solarized.text, bg = solarized.contrast },
 		PmenuThumb =			{ fg = solarized.fg, bg = solarized.accent },
-		Question =				{ fg = solarized.green },
+		Question =				{ fg = solarized.bases.green },
 		QuickFixLine =			{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
 		qfLineNr =				{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
 		Search =				{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
-		SpecialKey =			{ fg = solarized.yellow },
-		SpellBad =				{ fg = solarized.red, bg = solarized.none, style = 'italic,undercurl' },
-		SpellCap =				{ fg = solarized.blue, bg = solarized.none, style = 'italic,undercurl' },
-		SpellLocal =			{ fg = solarized.cyan, bg = solarized.none, style = 'italic,undercurl' },
-		SpellRare =				{ fg = solarized.yellow, bg = solarized.none, style = 'italic,undercurl' },
+		SpecialKey =			{ fg = solarized.bases.yellow },
+		SpellBad =				{ fg = solarized.bases.red, bg = solarized.none, style = 'italic,undercurl' },
+		SpellCap =				{ fg = solarized.bases.blue, bg = solarized.none, style = 'italic,undercurl' },
+		SpellLocal =			{ fg = solarized.bases.cyan, bg = solarized.none, style = 'italic,undercurl' },
+		SpellRare =				{ fg = solarized.bases.yellow, bg = solarized.none, style = 'italic,undercurl' },
 		StatusLine =			{ fg = solarized.fg, bg = solarized.contrast },
 		StatusLineNC =  		{ fg = solarized.text, bg = solarized.disabled },
 		StatusLineTerm =		{ fg = solarized.fg, bg = solarized.contrast },
@@ -133,31 +133,31 @@ theme.loadEditor = function ()
 		TabLineFill =			{ fg = solarized.fg },
 		TablineSel =			{ fg = solarized.bg, bg = solarized.accent },
 		Tabline =				{ fg = solarized.fg },
-		Title =					{ fg = solarized.green, bg = solarized.none, style = 'bold' },
+		Title =					{ fg = solarized.bases.green, bg = solarized.none, style = 'bold' },
 		Visual =				{ fg = solarized.none, bg = solarized.selection },
 		VisualNOS =				{ fg = solarized.none, bg = solarized.selection },
 		WarningMsg =			{ fg = solarized.purple },
-		WildMenu =				{ fg = solarized.orange, bg = solarized.none, style = 'bold' },
+		WildMenu =				{ fg = solarized.bases.orange, bg = solarized.none, style = 'bold' },
 		CursorColumn =			{ fg = solarized.none, bg = solarized.active },
-		CursorLine =			{ fg = solarized.none, bg = solarized.bg_alt },
-		ToolbarLine =			{ fg = solarized.fg, bg = solarized.bg_alt },
+		CursorLine =			{ fg = solarized.none, bg = solarized.bg_hl },
+		ToolbarLine =			{ fg = solarized.fg, bg = solarized.bg_hl },
 		ToolbarButton =			{ fg = solarized.fg, bg = solarized.none, style = 'bold' },
 		NormalMode =			{ fg = solarized.accent, bg = solarized.none, style = 'reverse' },
-		InsertMode =			{ fg = solarized.green, bg = solarized.none, style = 'reverse' },
-		ReplacelMode =			{ fg = solarized.red, bg = solarized.none, style = 'reverse' },
-		VisualMode =			{ fg = solarized.yellow, bg = solarized.none, style = 'reverse' },
+		InsertMode =			{ fg = solarized.bases.green, bg = solarized.none, style = 'reverse' },
+		ReplacelMode =			{ fg = solarized.bases.red, bg = solarized.none, style = 'reverse' },
+		VisualMode =			{ fg = solarized.bases.yellow, bg = solarized.none, style = 'reverse' },
 		CommandMode =			{ fg = solarized.gray, bg = solarized.none, style = 'reverse' },
 		Warnings =				{ fg = solarized.purple },
 
         healthError =           { fg = solarized.error },
-        healthSuccess =         { fg = solarized.green },
+        healthSuccess =         { fg = solarized.bases.green },
         healthWarning =         { fg = solarized.purple },
 
         -- Dashboard
         DashboardShortCut =                     { fg = solarized.gray },
         DashboardHeader =                       { fg = solarized.gray },
         DashboardCenter =                       { fg = solarized.gray },
-        DashboardFooter =                       { fg = solarized.green, style = "italic" },
+        DashboardFooter =                       { fg = solarized.bases.green, style = "italic" },
 
 	}
 
@@ -185,20 +185,20 @@ end
 theme.loadTerminal = function ()
 
 	vim.g.terminal_color_0 = solarized.black
-	vim.g.terminal_color_1 = solarized.red
-	vim.g.terminal_color_2 = solarized.green
+	vim.g.terminal_color_1 = solarized.bases.red
+	vim.g.terminal_color_2 = solarized.bases.green
 	vim.g.terminal_color_3 = solarized.purple
-	vim.g.terminal_color_4 = solarized.blue
-	vim.g.terminal_color_5 = solarized.yellow
-	vim.g.terminal_color_6 = solarized.cyan
+	vim.g.terminal_color_4 = solarized.bases.blue
+	vim.g.terminal_color_5 = solarized.bases.yellow
+	vim.g.terminal_color_6 = solarized.bases.cyan
 	vim.g.terminal_color_7 = solarized.white
 	vim.g.terminal_color_8 = solarized.gray
-	vim.g.terminal_color_9 = solarized.red
-	vim.g.terminal_color_10 = solarized.green
+	vim.g.terminal_color_9 = solarized.bases.red
+	vim.g.terminal_color_10 = solarized.bases.green
 	vim.g.terminal_color_11 = solarized.purple
-	vim.g.terminal_color_12 = solarized.blue
-	vim.g.terminal_color_13 = solarized.yellow
-	vim.g.terminal_color_14 = solarized.cyan
+	vim.g.terminal_color_12 = solarized.bases.blue
+	vim.g.terminal_color_13 = solarized.bases.yellow
+	vim.g.terminal_color_14 = solarized.bases.cyan
 	vim.g.terminal_color_15 = solarized.white
 
 end
@@ -209,36 +209,36 @@ theme.loadTreeSitter = function ()
     local treesitter = {
         ['@attribute'] =             { fg = solarized.purple },    -- Attribute annotations (e.g. Rust lifetimes).
         ['@attribute.builtin'] =     { fg = solarized.purple, style = 'italic' },    -- Builtin annotations (e.g. @property in Python).
-        ['@boolean']=                { fg = solarized.orange },    -- For booleans.
-        ['@character']=              { fg = solarized.orange },    -- For characters.
-        ['@character.special']=      { fg = solarized.orange },    -- For characters.
-        ['@constructor'] =           { fg = solarized.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        ['@boolean'] =               { fg = solarized.bases.orange },    -- For booleans.
+        ['@character'] =             { fg = solarized.bases.orange },    -- For characters.
+        ['@character.special'] =     { fg = solarized.bases.orange },    -- For characters.
+        ['@constructor'] =           { fg = solarized.bases.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         ['@constant'] =              { fg = solarized.purple },    -- For constants
-        ['@constant.builtin'] =      { fg = solarized.red },    -- For constant that are built in the language: `nil` in Lua.
-        ['@constant.macro'] =        { fg = solarized.blue },    -- For constants that are defined by macros: `NULL` in C.
-        ['@label'] =                 { fg = solarized.red }, -- For labels: `label:` in C and `:label:` in Lua.
+        ['@constant.builtin'] =      { fg = solarized.bases.red },    -- For constant that are built in the language: `nil` in Lua.
+        ['@constant.macro'] =        { fg = solarized.bases.blue },    -- For constants that are defined by macros: `NULL` in C.
+        ['@label'] =                 { fg = solarized.bases.red }, -- For labels: `label:` in C and `:label:` in Lua.
         ['@module'] =                { fg = solarized.purple },    -- For identifiers referring to modules and namespaces.
-        ['@module.builtin'] =        { fg = solarized.red },    -- For identifiers referring to modules and namespaces.
-        ['@number'] =                { fg = solarized.red },    -- For all numbers
-        ['@number.float'] =          { fg = solarized.red },    -- For floats.
-        ['@operator'] =              { fg = solarized.text_hl }, -- For any operator: `+`, but also `->` and `*` in C.
-        ['@property'] =              { fg = solarized.text_hl, style = 'italic' },
-        ['@punctuation.delimiter'] = { fg = solarized.red }, -- For delimiters ie: `.`
-        ['@punctuation.bracket'] =   { fg = solarized.red }, -- For brackets and parens.
-        ['@punctuation.special'] =   { fg = solarized.red, style = 'bold' }, -- For special punctutation that does not fall in the catagories before.
-        ['@type'] =                  { fg = solarized.yellow }, -- For types and type annotations.
-        ['@type.builtin'] =          { fg = solarized.red, style = 'italic' }, -- For builtin types.
-        ['@type.definition'] =       { fg = solarized.yellow, style = 'italic' }, -- For identifiers in type definitions (e.g. typedef in C).
-        ['@tag'] =                   { fg = solarized.red, style = 'bold' },    -- Tags like html tag names.
-        ['@tag.builtin'] =           { fg = solarized.red, style = 'bold' },    -- Tags like html tag names.
-        ['@tag.attribute'] =         { fg = solarized.red, style = 'bold' },    -- Tags like html tag names.
+        ['@module.builtin'] =        { fg = solarized.bases.red },    -- For identifiers referring to modules and namespaces.
+        ['@number'] =                { fg = solarized.bases.red },    -- For all numbers
+        ['@number.float'] =          { fg = solarized.bases.red },    -- For floats.
+        ['@operator'] =              { fg = solarized.fg_hl }, -- For any operator: `+`, but also `->` and `*` in C.
+        ['@property'] =              { fg = solarized.fg_hl, style = 'italic' },
+        ['@punctuation.delimiter'] = { fg = solarized.bases.red }, -- For delimiters ie: `.`
+        ['@punctuation.bracket'] =   { fg = solarized.bases.red }, -- For brackets and parens.
+        ['@punctuation.special'] =   { fg = solarized.bases.red, style = 'bold' }, -- For special punctutation that does not fall in the catagories before.
+        ['@type'] =                  { fg = solarized.bases.yellow }, -- For types and type annotations.
+        ['@type.builtin'] =          { fg = solarized.bases.red, style = 'italic' }, -- For builtin types.
+        ['@type.definition'] =       { fg = solarized.bases.yellow, style = 'italic' }, -- For identifiers in type definitions (e.g. typedef in C).
+        ['@tag'] =                   { fg = solarized.bases.red, style = 'bold' },    -- Tags like html tag names.
+        ['@tag.builtin'] =           { fg = solarized.bases.red, style = 'bold' },    -- Tags like html tag names.
+        ['@tag.attribute'] =         { fg = solarized.bases.red, style = 'bold' },    -- Tags like html tag names.
         ['@tag.delimiter'] =         { fg = solarized.purple },    -- Tag delimiter like `<` `>` `/`
 
 		-- Those comment types are not affected by the solarized_italic_comments variable:
-		['@comment.error'] =         { fg = solarized.red, style = 'bold' },
-		['@comment.warning'] =       { fg = solarized.orange, style = 'bold' },
+		['@comment.error'] =         { fg = solarized.bases.red, style = 'bold' },
+		['@comment.warning'] =       { fg = solarized.bases.orange, style = 'bold' },
 		['@comment.todo'] =          { fg = solarized.purple, style = 'bold,italic' },
-		['@comment.note'] =          { fg = solarized.green, style = 'bold' },
+		['@comment.note'] =          { fg = solarized.bases.green, style = 'bold' },
 
 		-- Markup styles:
         ['@markup.strong'] =         { fg = solarized.text, bg = solarized.none, style = 'bold' },
@@ -246,34 +246,34 @@ theme.loadTreeSitter = function ()
         ['@markup.strikethrough'] =  { fg = solarized.text, bg = solarized.none, style = 'strikethrough' },
         ['@markup.underline'] =      { fg = solarized.text, bg = solarized.none, style = 'underline' },
 		-- Text structure:
-        ['@markup.heading'] =        { fg = solarized.red, bg = solarized.none, style = 'bold' },
-        ['@markup.heading.1'] =      { fg = solarized.orange, bg = solarized.none, style = 'bold' },
-        ['@markup.heading.2'] =      { fg = solarized.yellow, bg = solarized.none, style = 'bold' },
-        ['@markup.heading.3'] =      { fg = solarized.green, bg = solarized.none, style = 'italic' },
-        ['@markup.heading.4'] =      { fg = solarized.cyan, bg = solarized.none, style = 'italic' },
-        ['@markup.heading.5'] =      { fg = solarized.blue, bg = solarized.none, style = 'italic' },
-        ['@markup.heading.6'] =      { fg = solarized.violet, bg = solarized.none, style = 'italic' },
+        ['@markup.heading'] =        { fg = solarized.bases.red, bg = solarized.none, style = 'bold' },
+        ['@markup.heading.1'] =      { fg = solarized.bases.orange, bg = solarized.none, style = 'bold' },
+        ['@markup.heading.2'] =      { fg = solarized.bases.yellow, bg = solarized.none, style = 'bold' },
+        ['@markup.heading.3'] =      { fg = solarized.bases.green, bg = solarized.none, style = 'italic' },
+        ['@markup.heading.4'] =      { fg = solarized.bases.cyan, bg = solarized.none, style = 'italic' },
+        ['@markup.heading.5'] =      { fg = solarized.bases.blue, bg = solarized.none, style = 'italic' },
+        ['@markup.heading.6'] =      { fg = solarized.bases.violet, bg = solarized.none, style = 'italic' },
 		-- Special blocks/lines:
-        ['@markup.quote'] =          { fg = solarized.cyan, bg = solarized.none, style = 'italic' },
-        ['@markup.math'] =           { fg = solarized.yellow, bg = solarized.none },
+        ['@markup.quote'] =          { fg = solarized.bases.cyan, bg = solarized.none, style = 'italic' },
+        ['@markup.math'] =           { fg = solarized.bases.yellow, bg = solarized.none },
 		-- Links:
         ['@markup.link'] =           { fg = solarized.link, bg = solarized.none },
         ['@markup.link.label'] =     { fg = solarized.link, bg = solarized.none, style = 'italic' },
         ['@markup.link.url'] =       { fg = solarized.link, bg = solarized.none, style = 'underline' },
-        ['@markup.raw'] =            { fg = solarized.orange, bg = solarized.none }, -- Raw text in a markup language.
-        ['@markup.raw.block'] =      { fg = solarized.orange, bg = solarized.none }, -- Same as above, in a block.
+        ['@markup.raw'] =            { fg = solarized.bases.orange, bg = solarized.none }, -- Raw text in a markup language.
+        ['@markup.raw.block'] =      { fg = solarized.bases.orange, bg = solarized.none }, -- Same as above, in a block.
 		-- List items:
-        ['@markup.list'] =           { fg = solarized.magenta, bg = solarized.none },
-        ['@markup.list.checked'] =   { fg = solarized.magenta, bg = solarized.none, style = 'strikethrough' },
-        ['@markup.list.unchecked'] = { fg = solarized.magenta, bg = solarized.none },
+        ['@markup.list'] =           { fg = solarized.bases.magenta, bg = solarized.none },
+        ['@markup.list.checked'] =   { fg = solarized.bases.magenta, bg = solarized.none, style = 'strikethrough' },
+        ['@markup.list.unchecked'] = { fg = solarized.bases.magenta, bg = solarized.none },
 
 		-- All string types:
-        ['@string'] =                { fg = solarized.green },
+        ['@string'] =                { fg = solarized.bases.green },
         ['@string.documentation'] =  { fg = solarized.text_alt, style = 'bold,italic' },
-        ['@string.regexp'] =         { fg = solarized.green, style = 'italic' }, -- For regexes.
+        ['@string.regexp'] =         { fg = solarized.bases.green, style = 'italic' }, -- For regexes.
         ['@string.escape'] =         { fg = solarized.disabled }, -- For escape characters within a string.
         ['@string.special'] =        { fg = solarized.disabled },
-        ['@string.special.symbol'] = { fg = solarized.green, style = 'bold' },
+        ['@string.special.symbol'] = { fg = solarized.bases.green, style = 'bold' },
         ['@string.special.path'] =   { fg = solarized.text },
         ['@string.special.url'] =    { fg = solarized.link }, -- Any URI like a link or email in a markup language.
     }
@@ -291,65 +291,65 @@ theme.loadTreeSitter = function ()
 
 	-- Italic keywords:
     if vim.g.solarized_italic_keywords == true then
-		treesitter['@keyword'] =                  { fg = solarized.green, style = 'italic' }      -- General keywords not in the categories below.
-		treesitter['@keyword.coroutine'] =        { fg = solarized.green, style = 'italic' }      -- Async/await and related keywords
-		treesitter['@keyword.function'] =         { fg = solarized.blue, style = 'bold,italic' } -- Keyword to define a function (e.g. def in lua).
-		treesitter['@keyword.operator'] =         { fg = solarized.green, style = 'italic' }      -- Natural-text operators: 'and', 'or', 'is' ...
-		treesitter['@keyword.import'] =           { fg = solarized.green, style = 'bold,italic' } -- Inclusion/export of modules/names.
-		treesitter['@keyword.type'] =             { fg = solarized.green, style = 'italic' }      -- Keywords for forming types (struct, enum)
-		treesitter['@keyword.modifier'] =         { fg = solarized.green, style = 'italic' }      -- Modifiers for another keyword: const, public...
-		treesitter['@keyword.repeat'] =           { fg = solarized.green, style = 'bold,italic' } -- Loop-related keywords.
-		treesitter['@keyword.return'] =           { fg = solarized.blue, style = 'bold,italic' } -- Return, yield and similar.
-		treesitter['@keyword.debug'] =            { fg = solarized.green, style = 'italic' }      -- Debugging related (???) See :h treesitter.
-		treesitter['@keyword.exception'] =        { fg = solarized.green, style = 'bold,italic' } -- Throw/catch keywords, and related.
+		treesitter['@keyword'] =                  { fg = solarized.bases.green, style = 'italic' }      -- General keywords not in the categories below.
+		treesitter['@keyword.coroutine'] =        { fg = solarized.bases.green, style = 'italic' }      -- Async/await and related keywords
+		treesitter['@keyword.function'] =         { fg = solarized.bases.blue, style = 'bold,italic' } -- Keyword to define a function (e.g. def in lua).
+		treesitter['@keyword.operator'] =         { fg = solarized.bases.green, style = 'italic' }      -- Natural-text operators: 'and', 'or', 'is' ...
+		treesitter['@keyword.import'] =           { fg = solarized.bases.green, style = 'bold,italic' } -- Inclusion/export of modules/names.
+		treesitter['@keyword.type'] =             { fg = solarized.bases.green, style = 'italic' }      -- Keywords for forming types (struct, enum)
+		treesitter['@keyword.modifier'] =         { fg = solarized.bases.green, style = 'italic' }      -- Modifiers for another keyword: const, public...
+		treesitter['@keyword.repeat'] =           { fg = solarized.bases.green, style = 'bold,italic' } -- Loop-related keywords.
+		treesitter['@keyword.return'] =           { fg = solarized.bases.blue, style = 'bold,italic' } -- Return, yield and similar.
+		treesitter['@keyword.debug'] =            { fg = solarized.bases.green, style = 'italic' }      -- Debugging related (???) See :h treesitter.
+		treesitter['@keyword.exception'] =        { fg = solarized.bases.green, style = 'bold,italic' } -- Throw/catch keywords, and related.
 		treesitter['@keyword.directive'] =        { fg = solarized.purple, style = 'bold,italic' } -- Throw/catch keywords, and related.
 		treesitter['@keyword.directive.define'] = { fg = solarized.purple, style = 'bold,italic' } -- Throw/catch keywords, and related.
     else
-		treesitter['@keyword'] =                  { fg = solarized.green }
-		treesitter['@keyword.coroutine'] =        { fg = solarized.green }
-		treesitter['@keyword.function'] =         { fg = solarized.blue, style = 'bold' }
-		treesitter['@keyword.operator'] =         { fg = solarized.green }
-		treesitter['@keyword.import'] =           { fg = solarized.green, style = 'bold' }
-		treesitter['@keyword.type'] =             { fg = solarized.green }
-		treesitter['@keyword.modifier'] =         { fg = solarized.green }
-		treesitter['@keyword.repeat'] =           { fg = solarized.green, style = 'bold' }
-		treesitter['@keyword.return'] =           { fg = solarized.blue, style = 'bold' }
-		treesitter['@keyword.debug'] =            { fg = solarized.green }
-		treesitter['@keyword.exception'] =        { fg = solarized.green, style = 'bold' }
+		treesitter['@keyword'] =                  { fg = solarized.bases.green }
+		treesitter['@keyword.coroutine'] =        { fg = solarized.bases.green }
+		treesitter['@keyword.function'] =         { fg = solarized.bases.blue, style = 'bold' }
+		treesitter['@keyword.operator'] =         { fg = solarized.bases.green }
+		treesitter['@keyword.import'] =           { fg = solarized.bases.green, style = 'bold' }
+		treesitter['@keyword.type'] =             { fg = solarized.bases.green }
+		treesitter['@keyword.modifier'] =         { fg = solarized.bases.green }
+		treesitter['@keyword.repeat'] =           { fg = solarized.bases.green, style = 'bold' }
+		treesitter['@keyword.return'] =           { fg = solarized.bases.blue, style = 'bold' }
+		treesitter['@keyword.debug'] =            { fg = solarized.bases.green }
+		treesitter['@keyword.exception'] =        { fg = solarized.bases.green, style = 'bold' }
 		treesitter['@keyword.directive'] =        { fg = solarized.purple, style = 'bold' } -- Throw/catch keywords, and related.
 		treesitter['@keyword.directive.define'] = { fg = solarized.purple, style = 'bold' } -- Throw/catch keywords, and related.
     end
 
 	-- Functions: function[.builtin], function.call, function.macro
     if vim.g.solarized_italic_functions == true then
-        treesitter['@function'] =                   { fg = solarized.blue, style = 'bold,italic' }    -- For fuction (calls and definitions).
-        treesitter['@function.call'] =              { fg = solarized.blue, style = 'italic' }    -- For fuction (calls and definitions).
-        treesitter['@function.method'] =            { fg = solarized.blue, style = 'bold,italic' }    -- For method calls and definitions.
-        treesitter['@function.method.call'] =       { fg = solarized.blue, style = 'italic' }    -- For method calls and definitions.
+        treesitter['@function'] =                   { fg = solarized.bases.blue, style = 'bold,italic' }    -- For fuction (calls and definitions).
+        treesitter['@function.call'] =              { fg = solarized.bases.blue, style = 'italic' }    -- For fuction (calls and definitions).
+        treesitter['@function.method'] =            { fg = solarized.bases.blue, style = 'bold,italic' }    -- For method calls and definitions.
+        treesitter['@function.method.call'] =       { fg = solarized.bases.blue, style = 'italic' }    -- For method calls and definitions.
         treesitter['@function.macro'] =             { fg = solarized.purple, style = 'bold,italic' }    -- For method calls and definitions.
-        treesitter['@function.builtin'] =           { fg = solarized.red, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
+        treesitter['@function.builtin'] =           { fg = solarized.bases.red, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
     else
-        treesitter['@function'] =                   { fg = solarized.blue, style = 'bold' }    -- For fuction (calls and definitions).
-        treesitter['@function.call'] =              { fg = solarized.blue }    -- For fuction (calls and definitions).
-        treesitter['@function.method'] =            { fg = solarized.blue, style = 'bold' }    -- For method calls and definitions.
-        treesitter['@function.method.call'] =       { fg = solarized.blue }    -- For method calls and definitions.
+        treesitter['@function'] =                   { fg = solarized.bases.blue, style = 'bold' }    -- For fuction (calls and definitions).
+        treesitter['@function.call'] =              { fg = solarized.bases.blue }    -- For fuction (calls and definitions).
+        treesitter['@function.method'] =            { fg = solarized.bases.blue, style = 'bold' }    -- For method calls and definitions.
+        treesitter['@function.method.call'] =       { fg = solarized.bases.blue }    -- For method calls and definitions.
         treesitter['@function.macro'] =             { fg = solarized.purple, style = 'italic' }    -- For method calls and definitions.
-        treesitter['@function.builtin'] =           { fg = solarized.red }    -- For builtin functions: `table.insert` in Lua.
+        treesitter['@function.builtin'] =           { fg = solarized.bases.red }    -- For builtin functions: `table.insert` in Lua.
     end
 
 	-- Variables: variable[.builtin], variable.parameter[.builtin], variable.member
     if vim.g.solarized_italic_variables == true then
         treesitter['@variable'] =                   { fg = solarized.text, style = 'italic' } -- Any variable name that does not have another highlight.
-        treesitter['@variable.builtin'] =           { fg = solarized.red, style = 'bold,italic' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter['@variable.builtin'] =           { fg = solarized.bases.red, style = 'bold,italic' } -- Variable names that are defined by the languages, like `this` or `self`.
         treesitter['@variable.parameter'] =         { fg = solarized.text, style = 'italic' }
-        treesitter['@variable.parameter.builtin'] = { fg = solarized.red, style = 'bold,italic' }
-        treesitter['@variable.member'] =            { fg = solarized.text_hl, style = 'italic' }
+        treesitter['@variable.parameter.builtin'] = { fg = solarized.bases.red, style = 'bold,italic' }
+        treesitter['@variable.member'] =            { fg = solarized.fg_hl, style = 'italic' }
     else
         treesitter['@variable'] =                   { fg = solarized.text } -- Any variable name that does not have another highlight.
-        treesitter['@variable.builtin'] =           { fg = solarized.red, style = 'bold' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter['@variable.builtin'] =           { fg = solarized.bases.red, style = 'bold' } -- Variable names that are defined by the languages, like `this` or `self`.
         treesitter['@variable.parameter'] =         { fg = solarized.text }
-        treesitter['@variable.parameter.builtin'] = { fg = solarized.red, style = 'bold' }
-        treesitter['@variable.member'] =            { fg = solarized.text_hl }
+        treesitter['@variable.parameter.builtin'] = { fg = solarized.bases.red, style = 'bold' }
+        treesitter['@variable.member'] =            { fg = solarized.fg_hl }
     end
 
     return treesitter
@@ -375,10 +375,10 @@ theme.loadLSP = function ()
         LspDiagnosticsFloatingInformation =     { fg = solarized.paleblue }, -- used for "Information" diagnostic messages in the diagnostics float
         LspDiagnosticsVirtualTextInformation =  { fg = solarized.paleblue }, -- Virtual text "Information"
         LspDiagnosticsUnderlineInformation =    { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Information" diagnostics.
-        LspDiagnosticsDefaultHint =             { fg = solarized.yellow },  -- used for "Hint" diagnostic virtual text
-        LspDiagnosticsSignHint =                { fg = solarized.yellow }, -- used for "Hint" diagnostic signs in sign column
-        LspDiagnosticsFloatingHint =            { fg = solarized.yellow }, -- used for "Hint" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextHint =         { fg = solarized.yellow }, -- Virtual text "Hint"
+        LspDiagnosticsDefaultHint =             { fg = solarized.bases.yellow },  -- used for "Hint" diagnostic virtual text
+        LspDiagnosticsSignHint =                { fg = solarized.bases.yellow }, -- used for "Hint" diagnostic signs in sign column
+        LspDiagnosticsFloatingHint =            { fg = solarized.bases.yellow }, -- used for "Hint" diagnostic messages in the diagnostics float
+        LspDiagnosticsVirtualTextHint =         { fg = solarized.bases.yellow }, -- Virtual text "Hint"
         LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Hint" diagnostics.
         LspReferenceText =                      { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "text" references
         LspReferenceRead =                      { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "read" references
@@ -396,60 +396,60 @@ theme.loadPlugins = function()
 
         -- LspTrouble
         LspTroubleText =                        { fg = solarized.text },
-        LspTroubleCount =                       { fg = solarized.yellow, bg = solarized.active },
+        LspTroubleCount =                       { fg = solarized.bases.yellow, bg = solarized.active },
         LspTroubleNormal =                      { fg = solarized.fg, bg = solarized.sidebar },
 
         -- Diff
-        diffAdded =                             { fg = solarized.green },
-        diffRemoved =                           { fg = solarized.red },
+        diffAdded =                             { fg = solarized.bases.green },
+        diffRemoved =                           { fg = solarized.bases.red },
         diffChanged =                           { fg = solarized.purple },
-        diffOldFile =                           { fg = solarized.yelow },
-        diffNewFile =                           { fg = solarized.orange },
-        diffFile =                              { fg = solarized.blue },
+        diffOldFile =                           { fg = solarized.bases.yellow },
+        diffNewFile =                           { fg = solarized.bases.orange },
+        diffFile =                              { fg = solarized.bases.blue },
         diffLine =                              { fg = solarized.comments },
-        diffIndexLine =                         { fg = solarized.yellow },
+        diffIndexLine =                         { fg = solarized.bases.yellow },
 
         -- Neogit
         NeogitBranch =                          { fg = solarized.paleblue },
-        NeogitRemote =                          { fg = solarized.yellow },
+        NeogitRemote =                          { fg = solarized.bases.yellow },
         NeogitHunkHeader =                      { fg = solarized.fg, bg = solarized.highlight },
-        NeogitHunkHeaderHighlight =             { fg = solarized.blue, bg = solarized.contrast },
+        NeogitHunkHeaderHighlight =             { fg = solarized.bases.blue, bg = solarized.contrast },
         NeogitDiffContextHighlight =            { fg = solarized.text, bg = solarized.contrast },
-        NeogitDiffDeleteHighlight =             { fg = solarized.red },
-        NeogitDiffAddHighlight =                { fg = solarized.green },
+        NeogitDiffDeleteHighlight =             { fg = solarized.bases.red },
+        NeogitDiffAddHighlight =                { fg = solarized.bases.green },
 
         -- GitGutter
-        GitGutterAdd =                          { fg = solarized.green }, -- diff mode: Added line |diff.txt|
+        GitGutterAdd =                          { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
         GitGutterChange =                       { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitGutterDelete =                       { fg = solarized.red }, -- diff mode: Deleted line |diff.txt|
+        GitGutterDelete =                       { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
 
         -- GitSigns
-        GitSignsAdd =                           { fg = solarized.green }, -- diff mode: Added line |diff.txt|
-        GitSignsAddNr =                         { fg = solarized.green }, -- diff mode: Added line |diff.txt|
-        GitSignsAddLn =                         { fg = solarized.green }, -- diff mode: Added line |diff.txt|
+        GitSignsAdd =                           { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
+        GitSignsAddNr =                         { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
+        GitSignsAddLn =                         { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
         GitSignsChange =                        { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
         GitSignsChangeNr =                      { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
         GitSignsChangeLn =                      { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitSignsDelete =                        { fg = solarized.red }, -- diff mode: Deleted line |diff.txt|
-        GitSignsDeleteNr =                      { fg = solarized.red }, -- diff mode: Deleted line |diff.txt|
-        GitSignsDeleteLn =                      { fg = solarized.red }, -- diff mode: Deleted line |diff.txt|
+        GitSignsDelete =                        { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
+        GitSignsDeleteNr =                      { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
+        GitSignsDeleteLn =                      { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
 
         -- Telescope
-        TelescopePromptBorder =                 { fg = solarized.cyan },
-        TelescopeResultsBorder =                { fg = solarized.yellow },
-        TelescopePreviewBorder =                { fg = solarized.green },
-        TelescopeSelectionCaret =               { fg = solarized.yellow },
-        TelescopeSelection =                    { fg = solarized.yellow },
-        TelescopeMatching =                     { fg = solarized.cyan },
+        TelescopePromptBorder =                 { fg = solarized.bases.cyan },
+        TelescopeResultsBorder =                { fg = solarized.bases.yellow },
+        TelescopePreviewBorder =                { fg = solarized.bases.green },
+        TelescopeSelectionCaret =               { fg = solarized.bases.yellow },
+        TelescopeSelection =                    { fg = solarized.bases.yellow },
+        TelescopeMatching =                     { fg = solarized.bases.cyan },
         TelescopeNormal =                       { fg = solarized.fg, bg = solarized.float },
 
         -- NvimTree
-        NvimTreeRootFolder =                    { fg = solarized.blue, style = "bold" },
+        NvimTreeRootFolder =                    { fg = solarized.bases.blue, style = "bold" },
         NvimTreeGitDirty =                      { fg = solarized.purple },
-        NvimTreeGitNew =                        { fg = solarized.green },
+        NvimTreeGitNew =                        { fg = solarized.bases.green },
         NvimTreeImageFile =                     { fg = solarized.purple },
-        NvimTreeExecFile =                      { fg = solarized.green },
-        NvimTreeSpecialFile =                   { fg = solarized.yellow , style = "underline" },
+        NvimTreeExecFile =                      { fg = solarized.bases.green },
+        NvimTreeSpecialFile =                   { fg = solarized.bases.yellow , style = "underline" },
         NvimTreeFolderName=                     { fg = solarized.paleblue },
         NvimTreeEmptyFolderName=                { fg = solarized.disabled },
         NvimTreeFolderIcon=                     { fg = solarized.accent },
@@ -457,12 +457,12 @@ theme.loadPlugins = function()
         LspDiagnosticsError =                   { fg = solarized.error },
         LspDiagnosticsWarning =                 { fg = solarized.purple },
         LspDiagnosticsInformation =             { fg = solarized.paleblue },
-        LspDiagnosticsHint =                    { fg = solarized.yellow },
+        LspDiagnosticsHint =                    { fg = solarized.bases.yellow },
 
         -- WhichKey
         WhichKey =                              { fg = solarized.accent , style = 'bold'},
         WhichKeyGroup =                         { fg = solarized.text },
-        WhichKeyDesc =                          { fg = solarized.blue, style = 'italic' },
+        WhichKeyDesc =                          { fg = solarized.bases.blue, style = 'italic' },
         WhichKeySeperator =                     { fg = solarized.fg },
         WhichKeyFloating =                      { bg = solarized.float },
         WhichKeyFloat =                         { bg = solarized.float },
@@ -471,28 +471,28 @@ theme.loadPlugins = function()
         DiagnosticError =                       { fg = solarized.error },
         DiagnosticWarning =                     { fg = solarized.purple },
         DiagnosticInformation =                 { fg = solarized.paleblue },
-        DiagnosticHint =                        { fg = solarized.yellow },
+        DiagnosticHint =                        { fg = solarized.bases.yellow },
         DiagnosticTruncateLine =                { fg = solarized.fg },
         LspFloatWinNormal =                     { bg = solarized.contrast },
-        LspFloatWinBorder =                     { fg = solarized.yellow },
-        LspSagaBorderTitle =                    { fg = solarized.cyan },
+        LspFloatWinBorder =                     { fg = solarized.bases.yellow },
+        LspSagaBorderTitle =                    { fg = solarized.bases.cyan },
         LspSagaHoverBorder =                    { fg = solarized.paleblue },
-        LspSagaRenameBorder =                   { fg = solarized.green },
-        LspSagaDefPreviewBorder =               { fg = solarized.green },
-        LspSagaCodeActionBorder =               { fg = solarized.blue },
-        LspSagaFinderSelection =                { fg = solarized.green },
+        LspSagaRenameBorder =                   { fg = solarized.bases.green },
+        LspSagaDefPreviewBorder =               { fg = solarized.bases.green },
+        LspSagaCodeActionBorder =               { fg = solarized.bases.blue },
+        LspSagaFinderSelection =                { fg = solarized.bases.green },
         LspSagaCodeActionTitle =                { fg = solarized.paleblue },
-        LspSagaCodeActionContent =              { fg = solarized.yellow },
+        LspSagaCodeActionContent =              { fg = solarized.bases.yellow },
         LspSagaSignatureHelpBorder =            { fg = solarized.gray },
-        ReferencesCount =                       { fg = solarized.yellow },
-        DefinitionCount =                       { fg = solarized.yellow },
-        DefinitionIcon =                        { fg = solarized.blue },
-        ReferencesIcon =                        { fg = solarized.blue },
-        TargetWord =                            { fg = solarized.cyan },
+        ReferencesCount =                       { fg = solarized.bases.yellow },
+        DefinitionCount =                       { fg = solarized.bases.yellow },
+        DefinitionIcon =                        { fg = solarized.bases.blue },
+        ReferencesIcon =                        { fg = solarized.bases.blue },
+        TargetWord =                            { fg = solarized.bases.cyan },
 
         -- BufferLine
         BufferLineIndicatorSelected =           { fg = solarized.accent },
-        BufferLineFill =                        { bg = solarized.bg_alt },
+        BufferLineFill =                        { bg = solarized.bg_hl },
 
         -- Sneak
         Sneak =                                 { fg = solarized.bg, bg = solarized.accent },
@@ -501,10 +501,10 @@ theme.loadPlugins = function()
         -- Indent Blankline
         IndentBlanklineChar =                   { fg = solarized.highlight },
         IndentBlanklineContextChar =            { fg = solarized.disabled },
-	
+
 	 -- Nvim dap
-         DapBreakpoint =                         { fg = solarized.red },
-         DapStopped =                            { fg = solarized.green },
+         DapBreakpoint =                         { fg = solarized.bases.red },
+         DapStopped =                            { fg = solarized.bases.green },
     }
 
     -- Options:
