@@ -3,34 +3,34 @@ local colors = require('solarized.colors')
 local solarized = {}
 
 solarized.normal = {
-	a = { fg = colors.text_hl, bg = colors.bg_alt, gui = 'bold' },
-	b = { fg = colors.title, bg = colors.bg_alt },
-	c = { fg = colors.text_alt, bg = colors.bg },
+	a = { fg = colors.fg_hl, bg = colors.bg_hl, gui = 'bold' },
+	b = { fg = colors.fg, bg = colors.bg_hl },
+	c = { fg = colors.text, bg = colors.bg },
 }
 
 solarized.insert = {
-	a = { fg = colors.text_hl, bg = colors.green, gui = 'bold' },
-	b = { fg = colors.title, bg = colors.bg_alt },
+	a = { fg = colors.fg_hl, bg = colors.bases.green, gui = 'bold' },
+	b = { fg = colors.fg, bg = colors.bg_hl },
 }
 
 solarized.visual = {
-	a = { fg = colors.text_hl, bg = colors.purple, gui = 'bold' },
-	b = { fg = colors.title, bg = colors.bg_alt },
+	a = { fg = colors.fg_hl, bg = colors.purple, gui = 'bold' },
+	b = { fg = colors.fg, bg = colors.bg_hl },
 }
 
 solarized.replace = {
-	a = { fg = colors.text_hl, bg = colors.red, gui = 'bold' },
-	b = { fg = colors.title, bg = colors.bg_alt },
+	a = { fg = colors.fg_hl, bg = colors.bases.red, gui = 'bold' },
+	b = { fg = colors.fg, bg = colors.bg_hl },
 }
 
 solarized.command = {
-	a = { fg = colors.text_hl, bg = colors.yellow, gui = 'bold' },
-	b = { fg = colors.title, bg = colors.bg_alt },
+	a = { fg = colors.fg_hl, bg = colors.bases.yellow, gui = 'bold' },
+	b = { fg = colors.fg, bg = colors.bg_hl },
 }
 
 solarized.inactive = {
-  a = { fg = colors.disabled, bg = colors.bg_alt, gui = 'bold' },
-  b = { fg = colors.disabled, bg = colors.bg_alt },
+  a = { fg = colors.disabled, bg = colors.bg_hl, gui = 'bold' },
+  b = { fg = colors.disabled, bg = colors.bg_hl },
   c = { fg = colors.disabled, bg = colors.bg }
 }
 
