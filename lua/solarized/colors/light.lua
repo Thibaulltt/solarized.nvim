@@ -22,15 +22,15 @@ local solarized = {
     fg_hl =     bases.base02,
 
     comments =      bases.base1,
-    selection =     '#d3cfc1',
+    selection =     bases.base1,
     contrast =      '#002b36',
     active =        '#d8ccc4',
     border =        '#002b36',
     line_numbers =  '#839496',
     highlight =     '#d8ccc4',
-    disabled =      '#073642',
+    disabled =      bases.text_alt,
     cursor =        '#268bd2',
-    accent =        '#073642',
+    accent =        bases.fg_hl,
 
     error =         bases.red,
     link =          bases.cyan,

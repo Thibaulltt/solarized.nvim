@@ -92,72 +92,72 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-		NormalFloat =			{ fg = solarized.fg, bg = solarized.float }, -- normal text and background color
-		ColorColumn =			{ fg = solarized.none, bg = solarized.active }, --  used for the columns set with 'colorcolumn'
-		Conceal =				{ fg = solarized.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor =				{ fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- the character under the cursor
-		CursorIM =				{ fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- like Cursor, but used when in IME mode
-		Directory =				{ fg = solarized.bases.blue, bg = solarized.none }, -- directory names (and other special names in listings)
-		DiffAdd =				{ fg = solarized.bases.green, bg = solarized.none, style = 'reverse' }, -- diff mode: Added line
-		DiffChange =			{ fg = solarized.bases.orange, bg = solarized.none, style = 'reverse' }, --  diff mode: Changed line
-		DiffDelete =			{ fg = solarized.bases.red, bg = solarized.none, style = 'reverse' }, -- diff mode: Deleted line
-		DiffText =				{ fg = solarized.purple, bg = solarized.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
-		EndOfBuffer =			{ fg = solarized.disabled },
-		ErrorMsg =				{ fg = solarized.none },
-		Folded =				{ fg = solarized.disabled, bg = solarized.none, style = 'italic' },
-		FoldColumn =			{ fg = solarized.bases.blue },
-		IncSearch =				{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
-		LineNr =				{ fg = solarized.line_numbers, bg = solarized.bg_hl },
-		CursorLineNr =			{ fg = solarized.accent },
-		MatchParen =			{ fg = solarized.purple, bg = solarized.none, style = 'bold' },
-		ModeMsg =				{ fg = solarized.accent },
-		MoreMsg =				{ fg = solarized.accent },
-		NonText =				{ fg = solarized.disabled },
-		Pmenu =					{ fg = solarized.fg, bg = solarized.none },
-		PmenuSel =				{ fg = solarized.accent, bg = solarized.active },
-		PmenuSbar =				{ fg = solarized.text, bg = solarized.contrast },
-		PmenuThumb =			{ fg = solarized.fg, bg = solarized.accent },
-		Question =				{ fg = solarized.bases.green },
-		QuickFixLine =			{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
-		qfLineNr =				{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
-		Search =				{ fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
-		SpecialKey =			{ fg = solarized.bases.yellow },
-		SpellBad =				{ fg = solarized.bases.red, bg = solarized.none, style = 'italic,undercurl' },
-		SpellCap =				{ fg = solarized.bases.blue, bg = solarized.none, style = 'italic,undercurl' },
-		SpellLocal =			{ fg = solarized.bases.cyan, bg = solarized.none, style = 'italic,undercurl' },
-		SpellRare =				{ fg = solarized.bases.yellow, bg = solarized.none, style = 'italic,undercurl' },
-		StatusLine =			{ fg = solarized.fg, bg = solarized.contrast },
-		StatusLineNC =  		{ fg = solarized.text, bg = solarized.disabled },
-		StatusLineTerm =		{ fg = solarized.fg, bg = solarized.contrast },
-		StatusLineTermNC =		{ fg = solarized.text, bg = solarized.disabled },
-		TabLineFill =			{ fg = solarized.fg },
-		TablineSel =			{ fg = solarized.bg, bg = solarized.accent },
-		Tabline =				{ fg = solarized.fg },
-		Title =					{ fg = solarized.bases.green, bg = solarized.none, style = 'bold' },
-		Visual =				{ fg = solarized.none, bg = solarized.selection },
-		VisualNOS =				{ fg = solarized.none, bg = solarized.selection },
-		WarningMsg =			{ fg = solarized.purple },
-		WildMenu =				{ fg = solarized.bases.orange, bg = solarized.none, style = 'bold' },
-		CursorColumn =			{ fg = solarized.none, bg = solarized.active },
-		CursorLine =			{ fg = solarized.none, bg = solarized.bg_hl },
-		ToolbarLine =			{ fg = solarized.fg, bg = solarized.bg_hl },
-		ToolbarButton =			{ fg = solarized.fg, bg = solarized.none, style = 'bold' },
-		NormalMode =			{ fg = solarized.accent, bg = solarized.none, style = 'reverse' },
-		InsertMode =			{ fg = solarized.bases.green, bg = solarized.none, style = 'reverse' },
-		ReplacelMode =			{ fg = solarized.bases.red, bg = solarized.none, style = 'reverse' },
-		VisualMode =			{ fg = solarized.bases.yellow, bg = solarized.none, style = 'reverse' },
-		CommandMode =			{ fg = solarized.gray, bg = solarized.none, style = 'reverse' },
-		Warnings =				{ fg = solarized.purple },
+		NormalFloat =      { fg = solarized.fg, bg = solarized.float }, -- normal text and background color
+		ColorColumn =      { fg = solarized.none, bg = solarized.active }, --  used for the columns set with 'colorcolumn'
+		Conceal =          { fg = solarized.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Cursor =           { fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- the character under the cursor
+		CursorIM =         { fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- like Cursor, but used when in IME mode
+		Directory =        { fg = solarized.bases.blue, bg = solarized.none }, -- directory names (and other special names in listings)
+		DiffAdd =          { fg = solarized.bases.green, bg = solarized.none, style = 'reverse' }, -- diff mode: Added line
+		DiffChange =       { fg = solarized.bases.orange, bg = solarized.none, style = 'reverse' }, --  diff mode: Changed line
+		DiffDelete =       { fg = solarized.bases.red, bg = solarized.none, style = 'reverse' }, -- diff mode: Deleted line
+		DiffText =         { fg = solarized.purple, bg = solarized.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
+		EndOfBuffer =      { fg = solarized.disabled },
+		ErrorMsg =         { fg = solarized.none },
+		Folded =           { fg = solarized.disabled, bg = solarized.none, style = 'italic' },
+		FoldColumn =       { fg = solarized.bases.blue },
+		IncSearch =        { fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
+		LineNr =           { fg = solarized.line_numbers, bg = solarized.bg_hl },
+		CursorLineNr =     { fg = solarized.accent },
+		MatchParen =       { fg = solarized.purple, bg = solarized.none, style = 'bold' },
+		ModeMsg =          { fg = solarized.accent },
+		MoreMsg =          { fg = solarized.accent },
+		NonText =          { fg = solarized.disabled },
+		Pmenu =            { fg = solarized.fg, bg = solarized.none },
+		PmenuSel =         { fg = solarized.accent, bg = solarized.active },
+		PmenuSbar =        { fg = solarized.text, bg = solarized.contrast },
+		PmenuThumb =       { fg = solarized.fg, bg = solarized.accent },
+		Question =         { fg = solarized.bases.green },
+		QuickFixLine =     { fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
+		qfLineNr =         { fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
+		Search =           { fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
+		SpecialKey =       { fg = solarized.bases.yellow },
+		SpellBad =         { fg = solarized.bases.red, bg = solarized.none, style = 'italic,undercurl' },
+		SpellCap =         { fg = solarized.bases.blue, bg = solarized.none, style = 'italic,undercurl' },
+		SpellLocal =       { fg = solarized.bases.cyan, bg = solarized.none, style = 'italic,undercurl' },
+		SpellRare =        { fg = solarized.bases.yellow, bg = solarized.none, style = 'italic,undercurl' },
+		StatusLine =       { fg = solarized.fg, bg = solarized.contrast },
+		StatusLineNC =     { fg = solarized.text, bg = solarized.disabled },
+		StatusLineTerm =   { fg = solarized.fg, bg = solarized.contrast },
+		StatusLineTermNC = { fg = solarized.text, bg = solarized.disabled },
+		TabLineFill =      { fg = solarized.fg },
+		TablineSel =       { fg = solarized.bg, bg = solarized.accent },
+		Tabline =          { fg = solarized.fg },
+		Title =            { fg = solarized.bases.green, bg = solarized.none, style = 'bold' },
+		Visual =           { fg = solarized.none, bg = solarized.selection },
+		VisualNOS =        { fg = solarized.none, bg = solarized.selection },
+		WarningMsg =       { fg = solarized.purple },
+		WildMenu =         { fg = solarized.bases.orange, bg = solarized.none, style = 'bold' },
+		CursorColumn =     { fg = solarized.none, bg = solarized.bg_hl },
+		CursorLine =       { fg = solarized.none, bg = solarized.bg_hl },
+		ToolbarLine =      { fg = solarized.fg, bg = solarized.bg_hl },
+		ToolbarButton =    { fg = solarized.fg, bg = solarized.none, style = 'bold' },
+		NormalMode =       { fg = solarized.accent, bg = solarized.none, style = 'reverse' },
+		InsertMode =       { fg = solarized.bases.green, bg = solarized.none, style = 'reverse' },
+		ReplacelMode =     { fg = solarized.bases.red, bg = solarized.none, style = 'reverse' },
+		VisualMode =       { fg = solarized.bases.yellow, bg = solarized.none, style = 'reverse' },
+		CommandMode =      { fg = solarized.gray, bg = solarized.none, style = 'reverse' },
+		Warnings =         { fg = solarized.purple },
 
-        healthError =           { fg = solarized.error },
-        healthSuccess =         { fg = solarized.bases.green },
-        healthWarning =         { fg = solarized.purple },
+        healthError =   { fg = solarized.error },
+        healthSuccess = { fg = solarized.bases.green },
+        healthWarning = { fg = solarized.purple },
 
         -- Dashboard
-        DashboardShortCut =                     { fg = solarized.gray },
-        DashboardHeader =                       { fg = solarized.gray },
-        DashboardCenter =                       { fg = solarized.gray },
-        DashboardFooter =                       { fg = solarized.bases.green, style = "italic" },
+        DashboardShortCut = { fg = solarized.gray },
+        DashboardHeader =   { fg = solarized.gray },
+        DashboardCenter =   { fg = solarized.gray },
+        DashboardFooter =   { fg = solarized.bases.green, style = "italic" },
 
 	}
 
@@ -307,13 +307,13 @@ theme.loadTreeSitter = function ()
     else
 		treesitter['@keyword'] =                  { fg = solarized.bases.green }
 		treesitter['@keyword.coroutine'] =        { fg = solarized.bases.green }
-		treesitter['@keyword.function'] =         { fg = solarized.bases.blue, style = 'bold' }
+		treesitter['@keyword.function'] =         { fg = solarized.bases.green, style = 'bold' }
 		treesitter['@keyword.operator'] =         { fg = solarized.bases.green }
 		treesitter['@keyword.import'] =           { fg = solarized.bases.green, style = 'bold' }
 		treesitter['@keyword.type'] =             { fg = solarized.bases.green }
 		treesitter['@keyword.modifier'] =         { fg = solarized.bases.green }
 		treesitter['@keyword.repeat'] =           { fg = solarized.bases.green, style = 'bold' }
-		treesitter['@keyword.return'] =           { fg = solarized.bases.blue, style = 'bold' }
+		treesitter['@keyword.return'] =           { fg = solarized.bases.green, style = 'bold' }
 		treesitter['@keyword.debug'] =            { fg = solarized.bases.green }
 		treesitter['@keyword.exception'] =        { fg = solarized.bases.green, style = 'bold' }
 		treesitter['@keyword.directive'] =        { fg = solarized.purple, style = 'bold' } -- Throw/catch keywords, and related.

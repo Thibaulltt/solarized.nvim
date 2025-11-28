@@ -1,13 +1,17 @@
-# shaunsingh/solarized.nvim
+# The `solarized.nvim` theme
 
-## based off of the [Solarized Light Theme](https://github.com/altercation/vim-colors-solarized) for Vim
+This plugin is a fork of [`shaunsingh/solarized.nvim`](https://github.com/shaunsingh/solarized.nvim), which in turn was based off of the [Solarized Theme](https://github.com/altercation/vim-colors-solarized) for Vim.
+The main improvements over this theme are as follows:
+
+- better dark theme support ;
+- updated `treesitter` support (required version 0.8.0 and higher of neovim);
+- (coming soon) a Lua API to override colors based on filetypes or LSP integrations, using `treesitter` capture and highlight groups.
 
 <img width="1163" alt="120370710-f2647780-c2e2-11eb-87af-6835fc8a7783" src="https://user-images.githubusercontent.com/71196912/120493248-c8fe2700-c388-11eb-8336-c01789f97e24.png">
 
 ## Features
 
-solarized.nvim is meant to be a modern colorscheme written in lua for NeoVim that supports a lot of the new features
-added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+`solarized.nvim` is meant to be a modern colorscheme written in lua for NeoVim that supports a lot of the new features added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 + Supported plugins:
     + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
@@ -35,7 +39,7 @@ added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-trees
 
 ## ⚡️ Requirements
 
-+ Neovim >= 0.5.0
++ Neovim >= 0.8.0
 
 ## Installation
 
@@ -48,6 +52,15 @@ Plug 'shaunsingh/solarized.nvim'
 ```lua
 -- If you are using Packer
 use 'shaunsingh/solarized.nvim'
+```
+
+```lua
+-- If you are using lazy.nvim:
+require('lazy').setup({
+    -- ...
+    { 'Thibaulltt/solarized.nvim', lazy = false, priority = 9999 },
+    -- ...
+})
 ```
 
 ## Usage

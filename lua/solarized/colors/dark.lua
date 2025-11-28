@@ -28,7 +28,7 @@ local solarized = {
     border =        '#002b36',
     line_numbers =  '#839496',
     highlight =     '#d8ccc4',
-    disabled =      '#073642',
+    disabled =      bases.text_alt,
     cursor =        '#268bd2',
     accent =        '#073642',
 
