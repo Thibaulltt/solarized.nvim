@@ -361,29 +361,34 @@ theme.loadLSP = function ()
     -- Lsp highlight groups
 
     local lsp = {
-        LspDiagnosticsDefaultError =            { fg = solarized.error }, -- used for "Error" diagnostic virtual text
-        LspDiagnosticsSignError =               { fg = solarized.error }, -- used for "Error" diagnostic signs in sign column
-        LspDiagnosticsFloatingError =           { fg = solarized.error }, -- used for "Error" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextError =        { fg = solarized.error }, -- Virtual text "Error"
-        LspDiagnosticsUnderlineError =          { style = 'undercurl', sp = solarized.error }, -- used to underline "Error" diagnostics.
-        LspDiagnosticsDefaultWarning =          { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
-        LspDiagnosticsSignWarning =             { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
-        LspDiagnosticsFloatingWarning =         { fg = solarized.purple }, -- used for "Warning" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextWarning =      { fg = solarized.purple }, -- Virtual text "Warning"
-        LspDiagnosticsUnderlineWarning =        { style = 'undercurl', sp = solarized.purple }, -- used to underline "Warning" diagnostics.
-        LspDiagnosticsDefaultInformation =      { fg = solarized.paleblue }, -- used for "Information" diagnostic virtual text
-        LspDiagnosticsSignInformation =         { fg = solarized.paleblue },  -- used for "Information" diagnostic signs in sign column
-        LspDiagnosticsFloatingInformation =     { fg = solarized.paleblue }, -- used for "Information" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextInformation =  { fg = solarized.paleblue }, -- Virtual text "Information"
-        LspDiagnosticsUnderlineInformation =    { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Information" diagnostics.
-        LspDiagnosticsDefaultHint =             { fg = solarized.bases.yellow },  -- used for "Hint" diagnostic virtual text
-        LspDiagnosticsSignHint =                { fg = solarized.bases.yellow }, -- used for "Hint" diagnostic signs in sign column
-        LspDiagnosticsFloatingHint =            { fg = solarized.bases.yellow }, -- used for "Hint" diagnostic messages in the diagnostics float
-        LspDiagnosticsVirtualTextHint =         { fg = solarized.bases.yellow }, -- Virtual text "Hint"
-        LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Hint" diagnostics.
-        LspReferenceText =                      { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "text" references
-        LspReferenceRead =                      { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "read" references
-        LspReferenceWrite =                     { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "write" references
+		-- Most of those have removed the Lsp prefix now...
+        DiagnosticsDefaultError =            { fg = solarized.error }, -- used for "Error" diagnostic virtual text
+        DiagnosticsSignError =               { fg = solarized.error }, -- used for "Error" diagnostic signs in sign column
+        DiagnosticsFloatingError =           { fg = solarized.error }, -- used for "Error" diagnostic messages in the diagnostics float
+        DiagnosticsVirtualTextError =        { fg = solarized.error }, -- Virtual text "Error"
+        DiagnosticsVirtualLinesError =       { fg = solarized.error }, -- Virtual text "Error"
+        DiagnosticsUnderlineError =          { style = 'undercurl', sp = solarized.error }, -- used to underline "Error" diagnostics.
+        DiagnosticsDefaultWarning =          { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
+        DiagnosticsSignWarning =             { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
+        DiagnosticsFloatingWarning =         { fg = solarized.purple }, -- used for "Warning" diagnostic messages in the diagnostics float
+        DiagnosticsVirtualTextWarning =      { fg = solarized.purple }, -- Virtual text "Warning"
+        DiagnosticsVirtualLinesWarning =     { fg = solarized.purple }, -- Virtual text "Warning"
+        DiagnosticsUnderlineWarning =        { style = 'undercurl', sp = solarized.purple }, -- used to underline "Warning" diagnostics.
+        DiagnosticsDefaultInformation =      { fg = solarized.paleblue }, -- used for "Information" diagnostic virtual text
+        DiagnosticsSignInformation =         { fg = solarized.paleblue },  -- used for "Information" diagnostic signs in sign column
+        DiagnosticsFloatingInformation =     { fg = solarized.paleblue }, -- used for "Information" diagnostic messages in the diagnostics float
+        DiagnosticsVirtualTextInformation =  { fg = solarized.paleblue }, -- Virtual text "Information"
+        DiagnosticsVirtualLinesInformation = { fg = solarized.paleblue }, -- Virtual text "Information"
+        DiagnosticsUnderlineInformation =    { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Information" diagnostics.
+        DiagnosticsDefaultHint =             { fg = solarized.bases.yellow },  -- used for "Hint" diagnostic virtual text
+        DiagnosticsSignHint =                { fg = solarized.bases.yellow }, -- used for "Hint" diagnostic signs in sign column
+        DiagnosticsFloatingHint =            { fg = solarized.bases.yellow }, -- used for "Hint" diagnostic messages in the diagnostics float
+        DiagnosticsVirtualTextHint =         { fg = solarized.bases.yellow }, -- Virtual text "Hint"
+        DiagnosticsVirtualLinesHint =        { fg = solarized.bases.yellow }, -- Virtual text "Hint"
+        DiagnosticsUnderlineHint =           { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Hint" diagnostics.
+        LspReferenceText =                   { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "text" references
+        LspReferenceRead =                   { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "read" references
+        LspReferenceWrite =                  { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "write" references
     }
 
     return lsp
@@ -396,9 +401,9 @@ theme.loadPlugins = function()
     local plugins = {
 
         -- LspTrouble
-        LspTroubleText =                        { fg = solarized.text },
-        LspTroubleCount =                       { fg = solarized.bases.yellow, bg = solarized.active },
-        LspTroubleNormal =                      { fg = solarized.fg, bg = solarized.sidebar },
+        LspTroubleText =   { fg = solarized.text },
+        LspTroubleCount =  { fg = solarized.bases.yellow, bg = solarized.active },
+        LspTroubleNormal = { fg = solarized.fg, bg = solarized.sidebar },
 
 		-- nvim-notify:
         NotifyERRORBorder = { fg = solarized.text_alt, style = 'bold' },
@@ -423,120 +428,128 @@ theme.loadPlugins = function()
 		NotifyTRACEBody =   { fg = solarized.bases.violet },
 
         -- Diff
-        diffAdded =                             { fg = solarized.bases.green },
-        diffRemoved =                           { fg = solarized.bases.red },
-        diffChanged =                           { fg = solarized.purple },
-        diffOldFile =                           { fg = solarized.bases.yellow },
-        diffNewFile =                           { fg = solarized.bases.orange },
-        diffFile =                              { fg = solarized.bases.blue },
-        diffLine =                              { fg = solarized.comments },
-        diffIndexLine =                         { fg = solarized.bases.yellow },
+        diffAdded =     { fg = solarized.bases.green },
+        diffRemoved =   { fg = solarized.bases.red },
+        diffChanged =   { fg = solarized.purple },
+        diffOldFile =   { fg = solarized.bases.yellow },
+        diffNewFile =   { fg = solarized.bases.orange },
+        diffFile =      { fg = solarized.bases.blue },
+        diffLine =      { fg = solarized.comments },
+        diffIndexLine = { fg = solarized.bases.yellow },
 
         -- Neogit
-        NeogitBranch =                          { fg = solarized.paleblue },
-        NeogitRemote =                          { fg = solarized.bases.yellow },
-        NeogitHunkHeader =                      { fg = solarized.fg, bg = solarized.highlight },
-        NeogitHunkHeaderHighlight =             { fg = solarized.bases.blue, bg = solarized.contrast },
-        NeogitDiffContextHighlight =            { fg = solarized.text, bg = solarized.contrast },
-        NeogitDiffDeleteHighlight =             { fg = solarized.bases.red },
-        NeogitDiffAddHighlight =                { fg = solarized.bases.green },
+        NeogitBranch =               { fg = solarized.paleblue },
+        NeogitRemote =               { fg = solarized.bases.yellow },
+        NeogitHunkHeader =           { fg = solarized.fg, bg = solarized.highlight },
+        NeogitHunkHeaderHighlight =  { fg = solarized.bases.blue, bg = solarized.contrast },
+        NeogitDiffContextHighlight = { fg = solarized.text, bg = solarized.contrast },
+        NeogitDiffDeleteHighlight =  { fg = solarized.bases.red },
+        NeogitDiffAddHighlight =     { fg = solarized.bases.green },
 
         -- GitGutter
-        GitGutterAdd =                          { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
-        GitGutterChange =                       { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitGutterDelete =                       { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
+        GitGutterAdd =    { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
+        GitGutterChange = { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
+        GitGutterDelete = { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
 
         -- GitSigns
-        GitSignsAdd =                           { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
-        GitSignsAddNr =                         { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
-        GitSignsAddLn =                         { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
-        GitSignsChange =                        { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitSignsChangeNr =                      { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitSignsChangeLn =                      { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitSignsDelete =                        { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
-        GitSignsDeleteNr =                      { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
-        GitSignsDeleteLn =                      { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
+        GitSignsAdd =      { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
+        GitSignsAddNr =    { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
+        GitSignsAddLn =    { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
+        GitSignsChange =   { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
+        GitSignsChangeNr = { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
+        GitSignsChangeLn = { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
+        GitSignsDelete =   { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
+        GitSignsDeleteNr = { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
+        GitSignsDeleteLn = { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
 
         -- Telescope
-        TelescopePromptBorder =                 { fg = solarized.bases.cyan },
-        TelescopeResultsBorder =                { fg = solarized.bases.yellow },
-        TelescopePreviewBorder =                { fg = solarized.bases.green },
-        TelescopeSelectionCaret =               { fg = solarized.bases.yellow },
-        TelescopeSelection =                    { fg = solarized.bases.yellow },
-        TelescopeMatching =                     { fg = solarized.bases.cyan },
-        TelescopeNormal =                       { fg = solarized.fg, bg = solarized.float },
+        TelescopePromptBorder =   { fg = solarized.bases.cyan },
+        TelescopeResultsBorder =  { fg = solarized.bases.yellow },
+        TelescopePreviewBorder =  { fg = solarized.bases.green },
+        TelescopeSelectionCaret = { fg = solarized.bases.yellow },
+        TelescopeSelection =      { fg = solarized.bases.yellow },
+        TelescopeMatching =       { fg = solarized.bases.cyan },
+        TelescopeNormal =         { fg = solarized.fg, bg = solarized.float },
 
         -- NvimTree
-        NvimTreeRootFolder =                    { fg = solarized.bases.blue, style = "bold" },
-        NvimTreeGitDirty =                      { fg = solarized.purple },
-        NvimTreeGitNew =                        { fg = solarized.bases.green },
-        NvimTreeImageFile =                     { fg = solarized.purple },
-        NvimTreeExecFile =                      { fg = solarized.bases.green },
-        NvimTreeSpecialFile =                   { fg = solarized.bases.yellow , style = "underline" },
-        NvimTreeFolderName=                     { fg = solarized.paleblue },
-        NvimTreeEmptyFolderName=                { fg = solarized.disabled },
-        NvimTreeFolderIcon=                     { fg = solarized.accent },
-        NvimTreeIndentMarker =                  { fg  = solarized.disabled },
-        LspDiagnosticsError =                   { fg = solarized.error },
-        LspDiagnosticsWarning =                 { fg = solarized.purple },
-        LspDiagnosticsInformation =             { fg = solarized.paleblue },
-        LspDiagnosticsHint =                    { fg = solarized.bases.yellow },
+        NvimTreeRootFolder =        { fg = solarized.bases.blue, style = "bold" },
+        NvimTreeGitDirty =          { fg = solarized.purple },
+        NvimTreeGitNew =            { fg = solarized.bases.green },
+        NvimTreeImageFile =         { fg = solarized.purple },
+        NvimTreeExecFile =          { fg = solarized.bases.green },
+        NvimTreeSpecialFile =       { fg = solarized.bases.yellow , style = "underline" },
+        NvimTreeFolderName=         { fg = solarized.paleblue },
+        NvimTreeEmptyFolderName=    { fg = solarized.disabled },
+        NvimTreeFolderIcon=         { fg = solarized.accent },
+        NvimTreeIndentMarker =      { fg  = solarized.disabled },
+        LspDiagnosticsError =       { fg = solarized.error },
+        LspDiagnosticsWarning =     { fg = solarized.purple },
+        LspDiagnosticsInformation = { fg = solarized.paleblue },
+        LspDiagnosticsHint =        { fg = solarized.bases.yellow },
 
         -- WhichKey
-        WhichKey =                              { fg = solarized.accent , style = 'bold'},
-        WhichKeyGroup =                         { fg = solarized.text },
-        WhichKeyDesc =                          { fg = solarized.bases.blue, style = 'italic' },
-        WhichKeySeperator =                     { fg = solarized.fg },
-        WhichKeyFloating =                      { bg = solarized.float },
-        WhichKeyFloat =                         { bg = solarized.float },
+        WhichKey =           { fg = solarized.text , style = 'bold'},
+        WhichKeyGroup =      { fg = solarized.fg },
+        WhichKeyDesc =       { fg = solarized.text, style = 'italic' },
+        WhichKeySeperator =  { fg = solarized.text_alt },
+		WhichKeyBorder =     { fg = solarized.text_alt, bg = solarized.bg },
+		WhichKeyIconAzure =  { fg = solarized.bases.cyan, style = 'italic', },
+		WhichKeyIconBlue =   { fg = solarized.bases.blue, },
+		WhichKeyIconCyan =   { fg = solarized.bases.cyan, },
+		WhichKeyIconGreen =  { fg = solarized.bases.green, },
+		WhichKeyIconGrey =   { fg = solarized.gray, },
+		WhichKeyIconOrange = { fg = solarized.bases.orange, },
+		WhichKeyIconPurple = { fg = solarized.bases.violet, },
+		WhichKeyIconRed =    { fg = solarized.bases.red, },
+		WhichKeyIconYellow = { fg = solarized.bases.yellow, },
 
         -- LspSaga
-        DiagnosticError =                       { fg = solarized.error },
-        DiagnosticWarning =                     { fg = solarized.purple },
-        DiagnosticInformation =                 { fg = solarized.paleblue },
-        DiagnosticHint =                        { fg = solarized.bases.yellow },
-        DiagnosticTruncateLine =                { fg = solarized.fg },
-        LspFloatWinNormal =                     { bg = solarized.contrast },
-        LspFloatWinBorder =                     { fg = solarized.bases.yellow },
-        LspSagaBorderTitle =                    { fg = solarized.bases.cyan },
-        LspSagaHoverBorder =                    { fg = solarized.paleblue },
-        LspSagaRenameBorder =                   { fg = solarized.bases.green },
-        LspSagaDefPreviewBorder =               { fg = solarized.bases.green },
-        LspSagaCodeActionBorder =               { fg = solarized.bases.blue },
-        LspSagaFinderSelection =                { fg = solarized.bases.green },
-        LspSagaCodeActionTitle =                { fg = solarized.paleblue },
-        LspSagaCodeActionContent =              { fg = solarized.bases.yellow },
-        LspSagaSignatureHelpBorder =            { fg = solarized.gray },
-        ReferencesCount =                       { fg = solarized.bases.yellow },
-        DefinitionCount =                       { fg = solarized.bases.yellow },
-        DefinitionIcon =                        { fg = solarized.bases.blue },
-        ReferencesIcon =                        { fg = solarized.bases.blue },
-        TargetWord =                            { fg = solarized.bases.cyan },
+        DiagnosticError =            { fg = solarized.error },
+        DiagnosticWarning =          { fg = solarized.bases.yellow },
+        DiagnosticInformation =      { fg = solarized.bases.cyan },
+        DiagnosticHint =             { fg = solarized.bases.green },
+        DiagnosticTruncateLine =     { fg = solarized.fg },
+        LspFloatWinNormal =          { bg = solarized.contrast },
+        LspFloatWinBorder =          { fg = solarized.bases.yellow },
+        LspSagaBorderTitle =         { fg = solarized.bases.cyan },
+        LspSagaHoverBorder =         { fg = solarized.paleblue },
+        LspSagaRenameBorder =        { fg = solarized.bases.green },
+        LspSagaDefPreviewBorder =    { fg = solarized.bases.green },
+        LspSagaCodeActionBorder =    { fg = solarized.bases.blue },
+        LspSagaFinderSelection =     { fg = solarized.bases.green },
+        LspSagaCodeActionTitle =     { fg = solarized.paleblue },
+        LspSagaCodeActionContent =   { fg = solarized.bases.yellow },
+        LspSagaSignatureHelpBorder = { fg = solarized.gray },
+        ReferencesCount =            { fg = solarized.bases.yellow },
+        DefinitionCount =            { fg = solarized.bases.yellow },
+        DefinitionIcon =             { fg = solarized.bases.blue },
+        ReferencesIcon =             { fg = solarized.bases.blue },
+        TargetWord =                 { fg = solarized.bases.cyan },
 
         -- BufferLine
-        BufferLineIndicatorSelected =           { fg = solarized.accent },
-        BufferLineFill =                        { bg = solarized.bg_hl },
+        BufferLineIndicatorSelected = { fg = solarized.accent },
+        BufferLineFill =              { bg = solarized.bg_hl },
 
         -- Sneak
-        Sneak =                                 { fg = solarized.bg, bg = solarized.accent },
-        SneakScope =                            { bg = solarized.selection },
+        Sneak =      { fg = solarized.bg, bg = solarized.accent },
+        SneakScope = { bg = solarized.selection },
 
         -- Indent Blankline
-        IndentBlanklineChar =                   { fg = solarized.highlight },
-        IndentBlanklineContextChar =            { fg = solarized.disabled },
+        IndentBlanklineChar =        { fg = solarized.highlight },
+        IndentBlanklineContextChar = { fg = solarized.disabled },
 
 	 -- Nvim dap
-         DapBreakpoint =                         { fg = solarized.bases.red },
-         DapStopped =                            { fg = solarized.bases.green },
+         DapBreakpoint = { fg = solarized.bases.red },
+         DapStopped =    { fg = solarized.bases.green },
     }
 
     -- Options:
 
     -- Disable nvim-tree background
         if vim.g.solarized_disable_background == true then
-            plugins.NvimTreeNormal =                        { fg = solarized.fg, bg = solarized.none }
+            plugins.NvimTreeNormal = { fg = solarized.fg, bg = solarized.none }
         else
-            plugins.NvimTreeNormal =                        { fg = solarized.fg, bg = solarized.sidebar }
+            plugins.NvimTreeNormal = { fg = solarized.fg, bg = solarized.sidebar }
         end
 
     return plugins
