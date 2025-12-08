@@ -16,9 +16,9 @@ local bases = require('solarized.colors.bases')
 --- @field fg_hl    string The alternative forground color, one notch brighter/darker than `fg`.
 ---
 --- @field comments     string The color selected for comments, based on the theme.
---- @field selection    string
---- @field contrast     string
---- @field active       string
+--- @field selection    string The color used for the background of any selection.
+--- @field contrast     string A contrasting background color.
+--- @field active       string A background color to mean this element is active / selected.
 --- @field border       string
 --- @field line_numbers string
 --- @field highlight    string

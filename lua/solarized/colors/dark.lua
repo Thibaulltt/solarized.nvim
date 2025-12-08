@@ -23,14 +23,14 @@ local solarized = {
 
     comments =      bases.base01,
     selection =     '#586e75',
-    contrast =      '#002b36',
-    active =        '#d8ccc4',
+    contrast =      bases.base02, -- Same as bg_hl
+    active =        bases.base1,  -- Same as fg
     border =        '#002b36',
     line_numbers =  '#839496',
     highlight =     '#d8ccc4',
-    disabled =      bases.text_alt,
-    cursor =        '#268bd2',
-    accent =        '#073642',
+    disabled =      bases.base01,
+    cursor =        bases.base0,
+    accent =        bases.base2,
 
     error =         bases.red,
     link =          bases.cyan,
