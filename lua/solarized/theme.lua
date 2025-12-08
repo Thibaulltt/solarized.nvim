@@ -93,7 +93,7 @@ theme.loadEditor = function ()
 
 	local editor = {
 		NormalFloat =      { fg = solarized.fg, bg = solarized.float }, -- normal text and background color
-		ColorColumn =      { fg = solarized.none, bg = solarized.active }, --  used for the columns set with 'colorcolumn'
+		ColorColumn =      { fg = solarized.none, bg = solarized.bg_hl }, --  used for the columns set with 'colorcolumn'
 		Conceal =          { fg = solarized.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor =           { fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- the character under the cursor
 		CursorIM =         { fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- like Cursor, but used when in IME mode
@@ -110,12 +110,12 @@ theme.loadEditor = function ()
 		LineNr =           { fg = solarized.line_numbers, bg = solarized.bg_hl },
 		CursorLineNr =     { fg = solarized.accent },
 		MatchParen =       { fg = solarized.purple, bg = solarized.none, style = 'bold' },
-		ModeMsg =          { fg = solarized.accent },
-		MoreMsg =          { fg = solarized.accent },
+		ModeMsg =          { fg = solarized.text_alt },
+		MoreMsg =          { link = 'ModeMsg' },
 		NonText =          { fg = solarized.disabled },
 		Pmenu =            { fg = solarized.fg, bg = solarized.none },
-		PmenuSel =         { fg = solarized.accent, bg = solarized.active },
-		PmenuSbar =        { fg = solarized.text, bg = solarized.contrast },
+		PmenuSel =         { fg = solarized.fg_hl, bg = solarized.bg_hl },
+		PmenuSbar =        { fg = solarized.text_alt, bg = solarized.contrast },
 		PmenuThumb =       { fg = solarized.fg, bg = solarized.accent },
 		Question =         { fg = solarized.bases.green },
 		QuickFixLine =     { fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
@@ -123,8 +123,8 @@ theme.loadEditor = function ()
 		Search =           { fg = solarized.none, bg = solarized.text_alt, },
         CurSearch =        { fg = solarized.none, bg = solarized.bases.yellow, style = 'italic' },
 		SpecialKey =       { fg = solarized.bases.yellow },
-		SpellBad =         { style = 'italic,undercurl', sp = solarized.bases.red },
-		SpellCap =         { style = 'italic,undercurl', sp = solarized.bases.blue, },
+		SpellBad =         { style = 'undercurl', sp = solarized.bases.red },
+		SpellCap =         { style = 'undercurl', sp = solarized.bases.blue, },
 		SpellLocal =       { fg = solarized.bases.cyan, bg = solarized.none, style = 'italic,underline' },
 		SpellRare =        { fg = solarized.bases.yellow, bg = solarized.none, style = 'italic,underline' },
 		StatusLine =       { fg = solarized.fg, bg = solarized.contrast },
