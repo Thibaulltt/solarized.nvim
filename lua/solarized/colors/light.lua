@@ -27,10 +27,10 @@ local solarized = {
     active =        bases.base01,
     border =        '#002b36',
     line_numbers =  '#839496',
-    highlight =     '#d8ccc4',
+    highlight =     bases.base2, -- Same as bg_hl
     disabled =      bases.base1,
     cursor =        bases.base00,
-    accent =        bases.base02,
+    accent =        bases.base02, -- Same as fg_hl
 
     error =         bases.red,
     link =          bases.cyan,

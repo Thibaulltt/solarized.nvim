@@ -26,10 +26,10 @@ theme.loadSyntax = function ()
 		Typedef =					{ fg = solarized.bases.red }, -- A typedef
 		PreCondit =					{ fg = solarized.bases.cyan }, -- preprocessor #if, #else, #endif, etc.
 		Special =					{ fg = solarized.bases.red }, -- any special symbol
-		SpecialChar =				{ fg = solarized.fg_hl }, -- special character in a constant
+		SpecialChar =				{ fg = solarized.fg }, -- special character in a constant
 		Tag =						{ fg = solarized.bases.red }, -- you can use CTRL-] on this
 		Delimiter =					{ fg = solarized.bases.cyan }, -- character that needs attention like , or .
-		SpecialComment =			{ fg = solarized.fg_hl }, -- special things inside a comment
+		SpecialComment =			{ fg = solarized.fg }, -- special things inside a comment
 		Debug =						{ fg = solarized.bases.red }, -- debugging statements
 		Underlined =				{ fg = solarized.link, bg = solarized.none, style = 'underline' }, -- text that stands out, HTML links
 		Ignore =					{ fg = solarized.disabled }, -- left blank, hidden
@@ -92,7 +92,7 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-		NormalFloat =      { fg = solarized.fg, bg = solarized.float }, -- normal text and background color
+		NormalFloat =      { fg = solarized.text, bg = solarized.float }, -- normal text and background color
 		ColorColumn =      { fg = solarized.none, bg = solarized.bg_hl }, --  used for the columns set with 'colorcolumn'
 		Conceal =          { fg = solarized.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor =           { fg = solarized.cursor, bg = solarized.none, style = 'reverse' }, -- the character under the cursor
@@ -113,10 +113,10 @@ theme.loadEditor = function ()
 		ModeMsg =          { fg = solarized.text_alt },
 		MoreMsg =          { link = 'ModeMsg' },
 		NonText =          { fg = solarized.disabled },
-		Pmenu =            { fg = solarized.fg, bg = solarized.none },
+		Pmenu =            { fg = solarized.text, bg = solarized.none },
 		PmenuSel =         { fg = solarized.fg_hl, bg = solarized.bg_hl },
 		PmenuSbar =        { fg = solarized.text_alt, bg = solarized.contrast },
-		PmenuThumb =       { fg = solarized.fg, bg = solarized.accent },
+		PmenuThumb =       { fg = solarized.text, bg = solarized.accent },
 		Question =         { fg = solarized.bases.green },
 		QuickFixLine =     { fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
 		qfLineNr =         { fg = solarized.highlight, bg = solarized.white, style = 'reverse' },
@@ -166,11 +166,11 @@ theme.loadEditor = function ()
 
     --Set transparent background
     if vim.g.solarized_disable_background == true then
-		editor.Normal =				{ fg = solarized.fg, bg = solarized.none } -- normal text and background color
-		editor.SignColumn =			{ fg = solarized.fg, bg = solarized.none }
+		editor.Normal =				{ fg = solarized.text, bg = solarized.none } -- normal text and background color
+		editor.SignColumn =			{ fg = solarized.text, bg = solarized.none }
     else
-		editor.Normal =				{ fg = solarized.fg, bg = solarized.bg } -- normal text and background color
-		editor.SignColumn =			{ fg = solarized.fg, bg = solarized.bg }
+		editor.Normal =				{ fg = solarized.text, bg = solarized.bg } -- normal text and background color
+		editor.SignColumn =			{ fg = solarized.text, bg = solarized.bg }
     end
 
     -- Remove window split borders
@@ -208,25 +208,25 @@ theme.loadTreeSitter = function ()
     -- TreeSitter highlight groups
 
     local treesitter = {
-        ['@attribute'] =             { fg = solarized.purple },    -- Attribute annotations (e.g. Rust lifetimes).
-        ['@attribute.builtin'] =     { fg = solarized.purple, style = 'italic' },    -- Builtin annotations (e.g. @property in Python).
+        ['@attribute'] =             { fg = solarized.bases.yellow },    -- Attribute annotations (e.g. Rust lifetimes).
+        ['@attribute.builtin'] =     { fg = solarized.bases.yellow, style = 'italic' },    -- Builtin annotations (e.g. @property in Python).
         ['@boolean'] =               { fg = solarized.bases.orange },    -- For booleans.
         ['@character'] =             { fg = solarized.bases.orange },    -- For characters.
-        ['@character.special'] =     { fg = solarized.bases.orange },    -- For characters.
+        ['@character.special'] =     { fg = solarized.bases.red },    -- For characters.
         ['@constructor'] =           { fg = solarized.bases.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         ['@constant'] =              { fg = solarized.purple },    -- For constants
         ['@constant.builtin'] =      { fg = solarized.bases.red },    -- For constant that are built in the language: `nil` in Lua.
         ['@constant.macro'] =        { fg = solarized.bases.blue },    -- For constants that are defined by macros: `NULL` in C.
-        ['@label'] =                 { fg = solarized.bases.red }, -- For labels: `label:` in C and `:label:` in Lua.
+        ['@label'] =                 { fg = solarized.bases.green }, -- For labels: `label:` in C and `:label:` in Lua.
         ['@module'] =                { fg = solarized.purple },    -- For identifiers referring to modules and namespaces.
         ['@module.builtin'] =        { fg = solarized.bases.red },    -- For identifiers referring to modules and namespaces.
-        ['@number'] =                { fg = solarized.bases.red },    -- For all numbers
-        ['@number.float'] =          { fg = solarized.bases.red },    -- For floats.
-        ['@operator'] =              { fg = solarized.fg_hl }, -- For any operator: `+`, but also `->` and `*` in C.
-        ['@property'] =              { fg = solarized.fg_hl, style = 'italic' },
-        ['@punctuation.delimiter'] = { fg = solarized.bases.red }, -- For delimiters ie: `.`
-        ['@punctuation.bracket'] =   { fg = solarized.bases.red }, -- For brackets and parens.
-        ['@punctuation.special'] =   { fg = solarized.bases.red, style = 'bold' }, -- For special punctutation that does not fall in the catagories before.
+        ['@number'] =                { fg = solarized.bases.blue },    -- For all numbers
+        ['@number.float'] =          { fg = solarized.bases.blue },    -- For floats.
+        ['@operator'] =              { fg = solarized.bases.green }, -- For any operator: `+`, but also `->` and `*` in C.
+        ['@property'] =              { fg = solarized.fg, style = 'italic' },
+        ['@punctuation.delimiter'] = { fg = solarized.bases.green }, -- For delimiters ie: `.`
+        ['@punctuation.bracket'] =   { fg = solarized.bases.green }, -- For brackets and parens.
+        ['@punctuation.special'] =   { fg = solarized.bases.green, style = 'bold' }, -- For special punctutation that does not fall in the catagories before.
         ['@type'] =                  { fg = solarized.bases.yellow }, -- For types and type annotations.
         ['@type.builtin'] =          { fg = solarized.bases.red, style = 'italic' }, -- For builtin types.
         ['@type.definition'] =       { fg = solarized.bases.yellow, style = 'italic' }, -- For identifiers in type definitions (e.g. typedef in C).
@@ -344,13 +344,13 @@ theme.loadTreeSitter = function ()
         treesitter['@variable.builtin'] =           { fg = solarized.bases.red, style = 'bold,italic' } -- Variable names that are defined by the languages, like `this` or `self`.
         treesitter['@variable.parameter'] =         { fg = solarized.text, style = 'italic' }
         treesitter['@variable.parameter.builtin'] = { fg = solarized.bases.red, style = 'bold,italic' }
-        treesitter['@variable.member'] =            { fg = solarized.fg_hl, style = 'italic' }
+        treesitter['@variable.member'] =            { fg = solarized.fg, style = 'italic' }
     else
         treesitter['@variable'] =                   { fg = solarized.text } -- Any variable name that does not have another highlight.
         treesitter['@variable.builtin'] =           { fg = solarized.bases.red, style = 'bold' } -- Variable names that are defined by the languages, like `this` or `self`.
         treesitter['@variable.parameter'] =         { fg = solarized.text }
         treesitter['@variable.parameter.builtin'] = { fg = solarized.bases.red, style = 'bold' }
-        treesitter['@variable.member'] =            { fg = solarized.fg_hl }
+        treesitter['@variable.member'] =            { fg = solarized.fg }
     end
 
     return treesitter
@@ -387,8 +387,10 @@ theme.loadLSP = function ()
         DiagnosticsVirtualLinesHint =        { fg = solarized.bases.yellow }, -- Virtual text "Hint"
         DiagnosticsUnderlineHint =           { style = 'undercurl', sp = solarized.paleblue }, -- used to underline "Hint" diagnostics.
         LspReferenceText =                   { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "text" references
-        LspReferenceRead =                   { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "read" references
-        LspReferenceWrite =                  { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "write" references
+        LspReferenceRead =                   { fg = solarized.accent, bg = solarized.highlight, style = 'italic' }, -- used for highlighting "read" references
+        LspReferenceWrite =                  { fg = solarized.accent, bg = solarized.highlight, style = 'bold' }, -- used for highlighting "write" references
+        LspReferenceTarget =                 { fg = solarized.accent, bg = solarized.highlight }, -- used for highlighting "write" references
+		LspInlayHint =                       { fg = solarized.disabled, bg = solarized.none, style = 'italic' }, -- 
     }
 
     return lsp
@@ -469,7 +471,7 @@ theme.loadPlugins = function()
         TelescopeSelectionCaret = { fg = solarized.bases.yellow },
         TelescopeSelection =      { fg = solarized.bases.yellow },
         TelescopeMatching =       { fg = solarized.bases.cyan },
-        TelescopeNormal =         { fg = solarized.fg, bg = solarized.float },
+        TelescopeNormal =         { fg = solarized.text, bg = solarized.float },
 
         -- NvimTree
         NvimTreeRootFolder =        { fg = solarized.bases.blue, style = "bold" },

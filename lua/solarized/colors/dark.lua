@@ -21,16 +21,16 @@ local solarized = {
     fg =        bases.base1,
     fg_hl =     bases.base2,
 
-    comments =      bases.base01,
+    comments =      bases.base01, -- Same as text_alt
     selection =     '#586e75',
     contrast =      bases.base02, -- Same as bg_hl
     active =        bases.base1,  -- Same as fg
     border =        '#002b36',
     line_numbers =  '#839496',
-    highlight =     '#d8ccc4',
+    highlight =     bases.base02, -- Same as bg_hl
     disabled =      bases.base01,
     cursor =        bases.base0,
-    accent =        bases.base2,
+    accent =        bases.base2,  -- Same as fg_hl
 
     error =         bases.red,
     link =          bases.cyan,
