@@ -3,38 +3,38 @@ local solarized = require("solarized.colors")
 local theme = {}
 
 theme.loadSyntax = function ()
-    -- Syntax highlight groups
+    -- Syntax highlight groups. This follows the original solarized colorscheme.
 
 	local syntax = {
 		Type =						{ fg = solarized.bases.yellow }, -- int, long, char, etc.
-		StorageClass =				{ fg = solarized.bases.cyan }, -- static, register, volatile, etc.
+		StorageClass =				{ fg = solarized.bases.yellow }, -- static, register, volatile, etc.
 		Structure =					{ fg = solarized.bases.yellow }, -- struct, union, enum, etc.
-		Constant =					{ fg = solarized.purple }, -- any constant
-		String =					{ fg = solarized.bases.green, bg = solarized.none, style= 'italic' }, -- Any string
-		Character =					{ fg = solarized.bases.orange }, -- any character constant: 'c', '\n'
-		Number =					{ fg = solarized.bases.orange }, -- a number constant: 5
-		Boolean =					{ fg = solarized.bases.orange }, -- a boolean constant: TRUE, false
-		Float =						{ fg = solarized.bases.orange }, -- a floating point constant: 2.3e10
-		Statement =					{ fg = solarized.text }, -- any statement
-		Label =						{ fg = solarized.bases.yellow }, -- case, default, etc.
-		Operator =					{ fg = solarized.bases.cyan }, -- sizeof", "+", "*", etc.
-		Exception =					{ fg = solarized.bases.cyan }, -- try, catch, throw
-		PreProc =					{ fg = solarized.bases.yellow }, -- generic Preprocessor
-		Include =					{ fg = solarized.bases.blue }, -- preprocessor #include
-		Define =					{ fg = solarized.fg }, -- preprocessor #define
-		Macro =						{ fg = solarized.bases.cyan }, -- same as Define
-		Typedef =					{ fg = solarized.bases.red }, -- A typedef
-		PreCondit =					{ fg = solarized.bases.cyan }, -- preprocessor #if, #else, #endif, etc.
-		Special =					{ fg = solarized.bases.red }, -- any special symbol
-		SpecialChar =				{ fg = solarized.fg }, -- special character in a constant
-		Tag =						{ fg = solarized.bases.red }, -- you can use CTRL-] on this
-		Delimiter =					{ fg = solarized.bases.cyan }, -- character that needs attention like , or .
-		SpecialComment =			{ fg = solarized.fg }, -- special things inside a comment
-		Debug =						{ fg = solarized.bases.red }, -- debugging statements
-		Underlined =				{ fg = solarized.link, bg = solarized.none, style = 'underline' }, -- text that stands out, HTML links
-		Ignore =					{ fg = solarized.disabled }, -- left blank, hidden
+		Constant =					{ fg = solarized.bases.cyan },   -- any constant
+		String =					{ fg = solarized.bases.cyan, },  -- Any string
+		Character =					{ fg = solarized.bases.cyan },   -- any character constant: 'c', '\n'
+		Number =					{ fg = solarized.bases.cyan },   -- a number constant: 5
+		Boolean =					{ fg = solarized.bases.cyan },   -- a boolean constant: TRUE, false
+		Float =						{ fg = solarized.bases.cyan },   -- a floating point constant: 2.3e10
+		Statement =					{ fg = solarized.bases.green },  -- any statement
+		Label =						{ fg = solarized.bases.green },  -- case, default, etc.
+		Operator =					{ fg = solarized.bases.green },  -- sizeof", "+", "*", etc.
+		Exception =					{ fg = solarized.bases.green },  -- try, catch, throw
+		PreProc =					{ fg = solarized.bases.orange }, -- generic Preprocessor
+		Include =					{ fg = solarized.bases.orange }, -- preprocessor #include
+		Define =					{ fg = solarized.bases.orange }, -- preprocessor #define
+		Macro =						{ fg = solarized.bases.orange }, -- same as Define
+		Typedef =					{ fg = solarized.bases.yellow }, -- A typedef
+		PreCondit =					{ fg = solarized.bases.orange }, -- preprocessor #if, #else, #endif, etc.
+		Special =					{ fg = solarized.bases.red },    -- any special symbol
+		SpecialChar =				{ fg = solarized.bases.red },    -- special character in a constant
+		Tag =						{ fg = solarized.bases.red },    -- you can use CTRL-] on this
+		Delimiter =					{ fg = solarized.bases.red },    -- character that needs attention like , or .
+		SpecialComment =			{ fg = solarized.bases.red },    -- special things inside a comment
+		Debug =						{ fg = solarized.bases.red },    -- debugging statements
+		Underlined =				{ fg = solarized.purple, style = 'underline' }, -- text that stands out, HTML links
+		Ignore =					{ fg = solarized.disabled },     -- left blank, hidden
 		Error =						{ fg = solarized.error, bg = solarized.none, style = 'bold,underline' }, -- any erroneous construct
-		Todo =						{ fg = solarized.purple, bg = solarized.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo =						{ fg = solarized.bases.magenta, bg = solarized.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
         htmlLink = { fg = solarized.link, style = "underline" },
         htmlH1 = { fg = solarized.bases.cyan, style = "bold" },
@@ -78,9 +78,9 @@ theme.loadSyntax = function ()
 	end
 
 	if vim.g.solarized_italic_variables == true then
-		syntax.Identifier =				{ fg = solarized.text, bg = solarized.none, style = 'italic' }; -- any variable name
+		syntax.Identifier =				{ fg = solarized.bases.blue, style = 'italic' }; -- any variable name
     else
-		syntax.Identifier =				{ fg = solarized.text }; -- any variable name
+		syntax.Identifier =				{ fg = solarized.bases.blue }; -- any variable name
     end
 
     return syntax
@@ -106,7 +106,7 @@ theme.loadEditor = function ()
 		ErrorMsg =         { fg = solarized.none },
 		Folded =           { fg = solarized.disabled, bg = solarized.none, style = 'italic' },
 		FoldColumn =       { fg = solarized.bases.blue },
-		IncSearch =        { fg = solarized.fg_hl, bg = solarized.bg_hl, },
+		IncSearch =        { fg = solarized.fg_hl, bg = solarized.bg_hl, style = 'bold,italic' },
 		LineNr =           { fg = solarized.line_numbers, bg = solarized.bg_hl },
 		CursorLineNr =     { fg = solarized.accent },
 		MatchParen =       { fg = solarized.purple, bg = solarized.bg_hl, style = 'bold' },
@@ -120,8 +120,8 @@ theme.loadEditor = function ()
 		Question =         { fg = solarized.bases.green },
 		QuickFixLine =     { fg = solarized.fg_hl, bg = solarized.highlight, },
 		qfLineNr =         { fg = solarized.fg_hl, bg = solarized.highlight, },
-		Search =           { fg = solarized.none, bg = solarized.bg_hl, style='reverse' },
-        CurSearch =        { fg = solarized.none, bg = solarized.bg_hl, style = 'italic,reverse' },
+		Search =           { fg = solarized.fg_hl, bg = solarized.bg_hl, style='bold' },
+        CurSearch =        { fg = solarized.fg_hl, bg = solarized.bg_hl, style = 'bold,italic' },
 		SpecialKey =       { fg = solarized.bases.yellow },
 		SpellBad =         { style = 'undercurl', sp = solarized.bases.red },
 		SpellCap =         { style = 'undercurl', sp = solarized.bases.blue, },
@@ -211,35 +211,42 @@ theme.loadTreeSitter = function ()
         ['@attribute'] =             { fg = solarized.bases.yellow },    -- Attribute annotations (e.g. Rust lifetimes).
         ['@attribute.builtin'] =     { fg = solarized.bases.yellow, style = 'italic' },    -- Builtin annotations (e.g. @property in Python).
         ['@boolean'] =               { fg = solarized.bases.orange },    -- For booleans.
-        ['@character'] =             { fg = solarized.bases.orange },    -- For characters.
-        ['@character.special'] =     { fg = solarized.bases.red },    -- For characters.
+        ['@character'] =             { fg = solarized.bases.cyan },    -- For characters.
+        ['@character.special'] =     { fg = solarized.bases.cyan, style = 'bold', },    -- For characters.
         ['@constructor'] =           { fg = solarized.bases.red }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        ['@constant'] =              { fg = solarized.purple },    -- For constants
-        ['@constant.builtin'] =      { fg = solarized.bases.red },    -- For constant that are built in the language: `nil` in Lua.
-        ['@constant.macro'] =        { fg = solarized.bases.blue },    -- For constants that are defined by macros: `NULL` in C.
+        ['@constant'] =              { fg = solarized.bases.cyan },    -- For constants
+        ['@constant.builtin'] =      { fg = solarized.bases.cyan, style = 'italic', },    -- For constant that are built in the language: `nil` in Lua.
+        ['@constant.macro'] =        { fg = solarized.bases.cyan, style = 'bold', },    -- For constants that are defined by macros: `NULL` in C.
         ['@label'] =                 { fg = solarized.bases.green }, -- For labels: `label:` in C and `:label:` in Lua.
         ['@module'] =                { fg = solarized.purple },    -- For identifiers referring to modules and namespaces.
         ['@module.builtin'] =        { fg = solarized.bases.red },    -- For identifiers referring to modules and namespaces.
-        ['@number'] =                { fg = solarized.bases.blue },    -- For all numbers
-        ['@number.float'] =          { fg = solarized.bases.blue },    -- For floats.
+        ['@number'] =                { fg = solarized.bases.cyan },    -- For all numbers
+        ['@number.float'] =          { fg = solarized.bases.cyan },    -- For floats.
         ['@operator'] =              { fg = solarized.bases.green }, -- For any operator: `+`, but also `->` and `*` in C.
         ['@property'] =              { fg = solarized.fg, style = 'italic' },
+
         ['@punctuation.delimiter'] = { fg = solarized.bases.green }, -- For delimiters ie: `.`
         ['@punctuation.bracket'] =   { fg = solarized.bases.green }, -- For brackets and parens.
         ['@punctuation.special'] =   { fg = solarized.bases.green, style = 'bold' }, -- For special punctutation that does not fall in the catagories before.
-        ['@type'] =                  { fg = solarized.bases.yellow }, -- For types and type annotations.
-        ['@type.builtin'] =          { fg = solarized.bases.red, style = 'italic' }, -- For builtin types.
-        ['@type.definition'] =       { fg = solarized.bases.yellow, style = 'italic' }, -- For identifiers in type definitions (e.g. typedef in C).
-        ['@tag'] =                   { fg = solarized.bases.red, style = 'bold' },    -- Tags like html tag names.
-        ['@tag.builtin'] =           { fg = solarized.bases.red, style = 'bold' },    -- Tags like html tag names.
-        ['@tag.attribute'] =         { fg = solarized.bases.red, style = 'bold' },    -- Tags like html tag names.
-        ['@tag.delimiter'] =         { fg = solarized.purple },    -- Tag delimiter like `<` `>` `/`
+
+		['@diff.plus'] = { fg = solarized.bases.green, },  -- Added text in diffs.
+		['@diff.minus'] = { fg = solarized.bases.red, style = 'strikethrough', }, -- Removed text in diffs.
+		['@diff.delta'] = { fg = solarized.bases.yellow, }, -- Changed text in diffs.
+
+        ['@type'] =            { fg = solarized.bases.yellow },                   -- For types and type annotations.
+        ['@type.builtin'] =    { fg = solarized.bases.yellow, style = 'italic' }, -- For builtin types.
+        ['@type.definition'] = { fg = solarized.bases.yellow, style = 'bold' },   -- For identifiers in type definitions (e.g. typedef in C).
+
+        ['@tag'] =           { fg = solarized.bases.red, },                  -- XML-style tag names.
+        ['@tag.builtin'] =   { fg = solarized.bases.red, style = 'italic' }, -- Builtin tag names (h1, a, etc.).
+        ['@tag.attribute'] = { fg = solarized.bases.red, style = 'bold', },  -- Tag attributes (href=, etc.).
+        ['@tag.delimiter'] = { fg = solarized.bases.red },                   -- Tag delimiters like `<` `>` `/`
 
 		-- Those comment types are not affected by the solarized_italic_comments variable:
-		['@comment.error'] =         { fg = solarized.bases.red, style = 'bold' },
-		['@comment.warning'] =       { fg = solarized.bases.orange, style = 'bold' },
-		['@comment.todo'] =          { fg = solarized.purple, style = 'bold,italic' },
-		['@comment.note'] =          { fg = solarized.bases.green, style = 'bold' },
+		['@comment.error'] =   { fg = solarized.bases.red, style = 'bold' },
+		['@comment.warning'] = { fg = solarized.bases.orange, style = 'bold' },
+		['@comment.todo'] =    { fg = solarized.purple, style = 'bold,italic' },
+		['@comment.note'] =    { fg = solarized.bases.green, style = 'bold' },
 
 		-- Markup styles:
         ['@markup.strong'] =         { fg = solarized.text, bg = solarized.none, style = 'bold' },
@@ -269,14 +276,14 @@ theme.loadTreeSitter = function ()
         ['@markup.list.unchecked'] = { fg = solarized.bases.magenta, bg = solarized.none },
 
 		-- All string types:
-        ['@string'] =                { fg = solarized.bases.green },
+        ['@string'] =                { fg = solarized.bases.cyan },
         ['@string.documentation'] =  { fg = solarized.text_alt, style = 'bold,italic' },
-        ['@string.regexp'] =         { fg = solarized.bases.green, style = 'italic' }, -- For regexes.
-        ['@string.escape'] =         { fg = solarized.disabled }, -- For escape characters within a string.
-        ['@string.special'] =        { fg = solarized.disabled },
-        ['@string.special.symbol'] = { fg = solarized.bases.green, style = 'bold' },
-        ['@string.special.path'] =   { fg = solarized.text },
-        ['@string.special.url'] =    { fg = solarized.link }, -- Any URI like a link or email in a markup language.
+        ['@string.regexp'] =         { fg = solarized.bases.cyan, style = 'italic' }, -- For regexes.
+        ['@string.escape'] =         { fg = solarized.disabled, style = 'italic', }, -- For escape characters within a string.
+        ['@string.special'] =        { fg = solarized.bases.cyan, style = 'bold', },
+        ['@string.special.symbol'] = { fg = solarized.bases.cyan, style = 'bold' },
+        ['@string.special.path'] =   { fg = solarized.bases.cyan, style = 'italic' },
+        ['@string.special.url'] =    { fg = solarized.bases.cyan, style = 'underline', }, -- Any URI like a link or email in a markup language.
     }
 
     -- Options:
