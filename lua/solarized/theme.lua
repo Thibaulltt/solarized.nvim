@@ -31,7 +31,7 @@ theme.loadSyntax = function ()
 		Delimiter =					{ fg = solarized.bases.red },    -- character that needs attention like , or .
 		SpecialComment =			{ fg = solarized.bases.red },    -- special things inside a comment
 		Debug =						{ fg = solarized.bases.red },    -- debugging statements
-		Underlined =				{ fg = solarized.purple, style = 'underline' }, -- text that stands out, HTML links
+		Underlined =				{ fg = solarized.bases.violet, style = 'underline' }, -- text that stands out, HTML links
 		Ignore =					{ fg = solarized.disabled },     -- left blank, hidden
 		Error =						{ fg = solarized.error, bg = solarized.none, style = 'bold,underline' }, -- any erroneous construct
 		Todo =						{ fg = solarized.bases.magenta, bg = solarized.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -40,7 +40,7 @@ theme.loadSyntax = function ()
         htmlH1 = { fg = solarized.bases.cyan, style = "bold" },
         htmlH2 = { fg = solarized.bases.red, style = "bold" },
         htmlH3 = { fg = solarized.bases.green, style = "bold" },
-        htmlH4 = { fg = solarized.purple, style = "bold" },
+        htmlH4 = { fg = solarized.bases.violet, style = "bold" },
         htmlH5 = { fg = solarized.bases.yellow, style = "bold" },
         markdownH1 = { fg = solarized.bases.cyan, style = "bold" },
         markdownH2 = { fg = solarized.bases.red, style = "bold" },
@@ -101,7 +101,7 @@ theme.loadEditor = function ()
 		DiffAdd =          { fg = solarized.bases.green, bg = solarized.none, style = 'reverse' }, -- diff mode: Added line
 		DiffChange =       { fg = solarized.bases.orange, bg = solarized.none, style = 'reverse' }, --  diff mode: Changed line
 		DiffDelete =       { fg = solarized.bases.red, bg = solarized.none, style = 'reverse' }, -- diff mode: Deleted line
-		DiffText =         { fg = solarized.purple, bg = solarized.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
+		DiffText =         { fg = solarized.bases.violet, bg = solarized.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
 		EndOfBuffer =      { fg = solarized.disabled },
 		ErrorMsg =         { fg = solarized.none },
 		Folded =           { fg = solarized.disabled, bg = solarized.none, style = 'italic' },
@@ -109,7 +109,7 @@ theme.loadEditor = function ()
 		IncSearch =        { fg = solarized.fg_hl, bg = solarized.bg_hl, style = 'bold,italic' },
 		LineNr =           { fg = solarized.line_numbers, bg = solarized.bg_hl },
 		CursorLineNr =     { fg = solarized.accent },
-		MatchParen =       { fg = solarized.purple, bg = solarized.bg_hl, style = 'bold' },
+		MatchParen =       { fg = solarized.bases.violet, bg = solarized.bg_hl, style = 'bold' },
 		ModeMsg =          { fg = solarized.text_alt },
 		MoreMsg =          { link = 'ModeMsg' },
 		NonText =          { fg = solarized.disabled },
@@ -137,7 +137,8 @@ theme.loadEditor = function ()
 		Title =            { fg = solarized.bases.green, bg = solarized.none, style = 'bold' },
 		Visual =           { fg = solarized.none, bg = solarized.selection },
 		VisualNOS =        { fg = solarized.none, bg = solarized.selection },
-		WarningMsg =       { fg = solarized.purple },
+		WarningMsg =       { fg = solarized.bases.violet },
+		WinBar =           { fg = solarized.text, bg = solarized.bg },
 		WildMenu =         { fg = solarized.bases.orange, bg = solarized.none, style = 'bold' },
 		CursorColumn =     { fg = solarized.none, bg = solarized.bg_hl },
 		CursorLine =       { fg = solarized.none, bg = solarized.bg_hl },
@@ -148,11 +149,11 @@ theme.loadEditor = function ()
 		ReplacelMode =     { fg = solarized.bases.red, bg = solarized.none, style = 'reverse' },
 		VisualMode =       { fg = solarized.bases.yellow, bg = solarized.none, style = 'reverse' },
 		CommandMode =      { fg = solarized.gray, bg = solarized.none, style = 'reverse' },
-		Warnings =         { fg = solarized.purple },
+		Warnings =         { fg = solarized.bases.violet },
 
         healthError =   { fg = solarized.error },
         healthSuccess = { fg = solarized.bases.green },
-        healthWarning = { fg = solarized.purple },
+        healthWarning = { fg = solarized.bases.violet },
 
         -- Dashboard
         DashboardShortCut = { fg = solarized.gray },
@@ -188,7 +189,7 @@ theme.loadTerminal = function ()
 	vim.g.terminal_color_0 = solarized.black
 	vim.g.terminal_color_1 = solarized.bases.red
 	vim.g.terminal_color_2 = solarized.bases.green
-	vim.g.terminal_color_3 = solarized.purple
+	vim.g.terminal_color_3 = solarized.bases.violet
 	vim.g.terminal_color_4 = solarized.bases.blue
 	vim.g.terminal_color_5 = solarized.bases.yellow
 	vim.g.terminal_color_6 = solarized.bases.cyan
@@ -196,7 +197,7 @@ theme.loadTerminal = function ()
 	vim.g.terminal_color_8 = solarized.gray
 	vim.g.terminal_color_9 = solarized.bases.red
 	vim.g.terminal_color_10 = solarized.bases.green
-	vim.g.terminal_color_11 = solarized.purple
+	vim.g.terminal_color_11 = solarized.bases.violet
 	vim.g.terminal_color_12 = solarized.bases.blue
 	vim.g.terminal_color_13 = solarized.bases.yellow
 	vim.g.terminal_color_14 = solarized.bases.cyan
@@ -218,7 +219,7 @@ theme.loadTreeSitter = function ()
         ['@constant.builtin'] =      { fg = solarized.bases.cyan, style = 'italic', },    -- For constant that are built in the language: `nil` in Lua.
         ['@constant.macro'] =        { fg = solarized.bases.cyan, style = 'bold', },    -- For constants that are defined by macros: `NULL` in C.
         ['@label'] =                 { fg = solarized.bases.green }, -- For labels: `label:` in C and `:label:` in Lua.
-        ['@module'] =                { fg = solarized.purple },    -- For identifiers referring to modules and namespaces.
+        ['@module'] =                { fg = solarized.bases.violet },    -- For identifiers referring to modules and namespaces.
         ['@module.builtin'] =        { fg = solarized.bases.red },    -- For identifiers referring to modules and namespaces.
         ['@number'] =                { fg = solarized.bases.cyan },    -- For all numbers
         ['@number.float'] =          { fg = solarized.bases.cyan },    -- For floats.
@@ -245,7 +246,7 @@ theme.loadTreeSitter = function ()
 		-- Those comment types are not affected by the solarized_italic_comments variable:
 		['@comment.error'] =   { fg = solarized.bases.red, style = 'bold' },
 		['@comment.warning'] = { fg = solarized.bases.orange, style = 'bold' },
-		['@comment.todo'] =    { fg = solarized.purple, style = 'bold,italic' },
+		['@comment.todo'] =    { fg = solarized.bases.violet, style = 'bold,italic' },
 		['@comment.note'] =    { fg = solarized.bases.green, style = 'bold' },
 
 		-- Markup styles:
@@ -310,8 +311,8 @@ theme.loadTreeSitter = function ()
 		treesitter['@keyword.return'] =           { fg = solarized.bases.blue, style = 'bold,italic' } -- Return, yield and similar.
 		treesitter['@keyword.debug'] =            { fg = solarized.bases.green, style = 'italic' }      -- Debugging related (???) See :h treesitter.
 		treesitter['@keyword.exception'] =        { fg = solarized.bases.green, style = 'bold,italic' } -- Throw/catch keywords, and related.
-		treesitter['@keyword.directive'] =        { fg = solarized.purple, style = 'bold,italic' } -- Throw/catch keywords, and related.
-		treesitter['@keyword.directive.define'] = { fg = solarized.purple, style = 'bold,italic' } -- Throw/catch keywords, and related.
+		treesitter['@keyword.directive'] =        { fg = solarized.bases.violet, style = 'bold,italic' } -- Throw/catch keywords, and related.
+		treesitter['@keyword.directive.define'] = { fg = solarized.bases.violet, style = 'bold,italic' } -- Throw/catch keywords, and related.
     else
 		treesitter['@keyword'] =                  { fg = solarized.bases.green }
 		treesitter['@keyword.coroutine'] =        { fg = solarized.bases.green }
@@ -324,8 +325,8 @@ theme.loadTreeSitter = function ()
 		treesitter['@keyword.return'] =           { fg = solarized.bases.green, style = 'bold' }
 		treesitter['@keyword.debug'] =            { fg = solarized.bases.green }
 		treesitter['@keyword.exception'] =        { fg = solarized.bases.green, style = 'bold' }
-		treesitter['@keyword.directive'] =        { fg = solarized.purple, style = 'bold' } -- Throw/catch keywords, and related.
-		treesitter['@keyword.directive.define'] = { fg = solarized.purple, style = 'bold' } -- Throw/catch keywords, and related.
+		treesitter['@keyword.directive'] =        { fg = solarized.bases.violet, style = 'bold' } -- Throw/catch keywords, and related.
+		treesitter['@keyword.directive.define'] = { fg = solarized.bases.violet, style = 'bold' } -- Throw/catch keywords, and related.
     end
 
 	-- Functions: function[.builtin], function.call, function.macro
@@ -334,14 +335,14 @@ theme.loadTreeSitter = function ()
         treesitter['@function.call'] =              { fg = solarized.bases.blue, style = 'italic' }    -- For fuction (calls and definitions).
         treesitter['@function.method'] =            { fg = solarized.bases.blue, style = 'bold,italic' }    -- For method calls and definitions.
         treesitter['@function.method.call'] =       { fg = solarized.bases.blue, style = 'italic' }    -- For method calls and definitions.
-        treesitter['@function.macro'] =             { fg = solarized.purple, style = 'bold,italic' }    -- For method calls and definitions.
+        treesitter['@function.macro'] =             { fg = solarized.bases.violet, style = 'bold,italic' }    -- For method calls and definitions.
         treesitter['@function.builtin'] =           { fg = solarized.bases.red, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
     else
         treesitter['@function'] =                   { fg = solarized.bases.blue, style = 'bold' }    -- For fuction (calls and definitions).
         treesitter['@function.call'] =              { fg = solarized.bases.blue }    -- For fuction (calls and definitions).
         treesitter['@function.method'] =            { fg = solarized.bases.blue, style = 'bold' }    -- For method calls and definitions.
         treesitter['@function.method.call'] =       { fg = solarized.bases.blue }    -- For method calls and definitions.
-        treesitter['@function.macro'] =             { fg = solarized.purple, style = 'italic' }    -- For method calls and definitions.
+        treesitter['@function.macro'] =             { fg = solarized.bases.violet, style = 'italic' }    -- For method calls and definitions.
         treesitter['@function.builtin'] =           { fg = solarized.bases.red }    -- For builtin functions: `table.insert` in Lua.
     end
 
@@ -375,12 +376,12 @@ theme.loadLSP = function ()
         DiagnosticsVirtualTextError =        { fg = solarized.error }, -- Virtual text "Error"
         DiagnosticsVirtualLinesError =       { fg = solarized.error }, -- Virtual text "Error"
         DiagnosticsUnderlineError =          { style = 'undercurl', sp = solarized.error }, -- used to underline "Error" diagnostics.
-        DiagnosticsDefaultWarning =          { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
-        DiagnosticsSignWarning =             { fg = solarized.purple }, -- used for "Warning" diagnostic signs in sign column
-        DiagnosticsFloatingWarning =         { fg = solarized.purple }, -- used for "Warning" diagnostic messages in the diagnostics float
-        DiagnosticsVirtualTextWarning =      { fg = solarized.purple }, -- Virtual text "Warning"
-        DiagnosticsVirtualLinesWarning =     { fg = solarized.purple }, -- Virtual text "Warning"
-        DiagnosticsUnderlineWarning =        { style = 'undercurl', sp = solarized.purple }, -- used to underline "Warning" diagnostics.
+        DiagnosticsDefaultWarning =          { fg = solarized.bases.violet }, -- used for "Warning" diagnostic signs in sign column
+        DiagnosticsSignWarning =             { fg = solarized.bases.violet }, -- used for "Warning" diagnostic signs in sign column
+        DiagnosticsFloatingWarning =         { fg = solarized.bases.violet }, -- used for "Warning" diagnostic messages in the diagnostics float
+        DiagnosticsVirtualTextWarning =      { fg = solarized.bases.violet }, -- Virtual text "Warning"
+        DiagnosticsVirtualLinesWarning =     { fg = solarized.bases.violet }, -- Virtual text "Warning"
+        DiagnosticsUnderlineWarning =        { style = 'undercurl', sp = solarized.bases.violet }, -- used to underline "Warning" diagnostics.
         DiagnosticsDefaultInformation =      { fg = solarized.paleblue }, -- used for "Information" diagnostic virtual text
         DiagnosticsSignInformation =         { fg = solarized.paleblue },  -- used for "Information" diagnostic signs in sign column
         DiagnosticsFloatingInformation =     { fg = solarized.paleblue }, -- used for "Information" diagnostic messages in the diagnostics float
@@ -439,7 +440,7 @@ theme.loadPlugins = function()
         -- Diff
         diffAdded =     { fg = solarized.bases.green },
         diffRemoved =   { fg = solarized.bases.red },
-        diffChanged =   { fg = solarized.purple },
+        diffChanged =   { fg = solarized.bases.violet },
         diffOldFile =   { fg = solarized.bases.yellow },
         diffNewFile =   { fg = solarized.bases.orange },
         diffFile =      { fg = solarized.bases.blue },
@@ -457,16 +458,16 @@ theme.loadPlugins = function()
 
         -- GitGutter
         GitGutterAdd =    { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
-        GitGutterChange = { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
+        GitGutterChange = { fg = solarized.bases.violet }, -- diff mode: Changed line |diff.txt|
         GitGutterDelete = { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
 
         -- GitSigns
         GitSignsAdd =      { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
         GitSignsAddNr =    { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
         GitSignsAddLn =    { fg = solarized.bases.green }, -- diff mode: Added line |diff.txt|
-        GitSignsChange =   { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitSignsChangeNr = { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
-        GitSignsChangeLn = { fg = solarized.purple }, -- diff mode: Changed line |diff.txt|
+        GitSignsChange =   { fg = solarized.bases.violet }, -- diff mode: Changed line |diff.txt|
+        GitSignsChangeNr = { fg = solarized.bases.violet }, -- diff mode: Changed line |diff.txt|
+        GitSignsChangeLn = { fg = solarized.bases.violet }, -- diff mode: Changed line |diff.txt|
         GitSignsDelete =   { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
         GitSignsDeleteNr = { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
         GitSignsDeleteLn = { fg = solarized.bases.red }, -- diff mode: Deleted line |diff.txt|
@@ -482,17 +483,17 @@ theme.loadPlugins = function()
 
         -- NvimTree
         NvimTreeRootFolder =        { fg = solarized.bases.blue, style = "bold" },
-        NvimTreeGitDirty =          { fg = solarized.purple },
+        NvimTreeGitDirty =          { fg = solarized.bases.violet },
         NvimTreeGitNew =            { fg = solarized.bases.green },
-        NvimTreeImageFile =         { fg = solarized.purple },
+        NvimTreeImageFile =         { fg = solarized.bases.violet },
         NvimTreeExecFile =          { fg = solarized.bases.green },
         NvimTreeSpecialFile =       { fg = solarized.bases.yellow , style = "underline" },
         NvimTreeFolderName=         { fg = solarized.paleblue },
         NvimTreeEmptyFolderName=    { fg = solarized.disabled },
         NvimTreeFolderIcon=         { fg = solarized.accent },
-        NvimTreeIndentMarker =      { fg  = solarized.disabled },
+        NvimTreeIndentMarker =      { fg = solarized.disabled },
         LspDiagnosticsError =       { fg = solarized.error },
-        LspDiagnosticsWarning =     { fg = solarized.purple },
+        LspDiagnosticsWarning =     { fg = solarized.bases.violet },
         LspDiagnosticsInformation = { fg = solarized.paleblue },
         LspDiagnosticsHint =        { fg = solarized.bases.yellow },
 
