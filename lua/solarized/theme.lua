@@ -430,11 +430,11 @@ theme.loadPlugins = function()
         NotifyINFOTitle =   { fg = solarized.bases.green, style = 'italic' },
         NotifyDEBUGTitle =  { fg = solarized.bases.cyan, style = 'italic' },
         NotifyTRACETitle =  { fg = solarized.bases.violet, style = 'italic' },
-		NotifyERRORBody =   { fg = solarized.bases.red },
-		NotifyWARNBody =    { fg = solarized.bases.yellow },
-		NotifyINFOBody =    { fg = solarized.bases.green },
-		NotifyDEBUGBody =   { fg = solarized.bases.cyan },
-		NotifyTRACEBody =   { fg = solarized.bases.violet },
+		NotifyERRORBody =   { fg = solarized.text },
+		NotifyWARNBody =    { fg = solarized.text },
+		NotifyINFOBody =    { fg = solarized.text },
+		NotifyDEBUGBody =   { fg = solarized.text },
+		NotifyTRACEBody =   { fg = solarized.text },
 
         -- Diff
         diffAdded =     { fg = solarized.bases.green },
